@@ -1,0 +1,221 @@
+.container {
+  padding: 40px;
+}
+.inputLabel {
+  font-size: 1rem;
+  bottom: 90%;
+  left: 2%;
+  width: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.jobSeekerInput {
+      color: var(--PlaceHolder);
+          padding: 24px;
+          border: 1px solid var(--border02);
+          border-radius: 7px; 
+          margin: 20px 0;
+}
+
+
+.form-control:disabled {
+  background-color: white !important;
+  opacity: 1;
+}
+
+.card {
+  margin-top: 36px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: visible;
+  margin-left: px;
+}
+
+.card-title {
+  font-size: 1.2em;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  z-index: 1;
+}
+
+.card-body {
+  padding-top: 30px;
+}
+
+.card-text {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #275C45;
+}
+
+.container i {
+  background-color: white;
+  color: green; 
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px; 
+  border-radius: 5px; 
+  margin-top: 20px;
+}
+
+.education-item, .experience-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.education-item:last-child, .experience-item:last-child {
+  margin-bottom: 0;
+}
+
+.education-item .number, .experience-item .number {
+  font-size: 1.5em;
+  color: #4CAF50;
+  margin-right: 10px;
+  min-width: 20px;
+}
+
+.education-item .content, .experience-item .content {
+  background-color: #F6F7FF;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill {
+  background-color: #F6F7FF;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.education-item .number, .experience-item .number {
+  margin-right: 10px;
+  min-width: 20px;
+  border-radius: 50%;
+  background-color: #B4E0D3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+
+.education-item .number::after, .experience-item .number::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: calc(100% - 40px); 
+  width: 2px;
+  background-color: tomato;
+}
+
+.card .content p {
+  color: #4CAF50;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  .card {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .card-title {
+    font-size: 1em;
+  }
+  .card-body {
+    padding-top: 20px;
+  }
+  .card-text {
+    font-size: 0.9em;
+  }
+  .education-item, .experience-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .education-item .number, .experience-item .number {
+    font-size: 1.2em;
+  }
+  .skills {
+    justify-content: center;
+  }
+}
+.overviewCard {
+  margin-top: 36px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: visible;
+  margin-left: 43px;
+}
+
+.overviewCard .card-body {
+  padding-top: 30px;
+}
+
+.overviewCard .card-text {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.overviewCard .card-title {
+  font-size: 1.2em;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background: white;
+  padding: 0 10px;
+  z-index: 1;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 1200px) {
+  .eduCard, .overviewCard {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .eduCard, .overviewCard {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  .card-title {
+    font-size: 1em;
+  }
+  .card-body {
+    padding-top: 20px;
+  }
+  .card-text {
+    font-size: 0.9em;
+  }
+}

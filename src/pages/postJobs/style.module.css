@@ -1,0 +1,142 @@
+/* main-content */
+.mainContent{
+   width: 100%;
+   gap: 2.5rem;
+}
+
+.rightSection{
+  position: relative;
+  width: calc(100%-280px);
+}
+
+/* side-menu */
+.mainContent .sideMenu{
+   display: flex;
+   flex-direction:column;
+   width: 280px;
+   background-color: var(--white);
+   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+
+}
+.mainContent .sideMenu .sideMenu__item{
+  margin-top: 1.563;
+  margin: auto;
+}
+
+/* inputs */
+.coolinput {
+   display: flex;
+   flex-direction: column;
+   width: fit-content;
+   position: static;
+   width:56.5rem;
+   height:3.625rem;
+  
+ }
+ 
+ .coolinput label.text {
+   font-size: 0.75rem;
+   color: var(--Paragraph01);
+   font-weight: 700;
+   position: relative;
+   top: 0.5rem;
+   margin: 0 0 0 7px;
+   padding: 0 3px;
+   background: var(--white);
+   width: fit-content;
+ }
+ 
+ .coolinput input ,.coolinput textarea,.coolinput .select,.select option:hover,.coolinput .select option:hover{
+   padding: 11px 10px;
+   font-size: 0.75rem;
+   border: 2px var(--PlaceHolder) solid;
+   border-radius: 5px;
+   background: var(--white);
+ }
+
+
+ .coolinput input.input:focus,.coolinput textarea:focus ,.coolinput .select:focus{
+   outline: none;
+   border: 2px var(--Third) solid;
+ }
+
+ option{
+   font-size: 0.75rem;
+   color: var(--Paragraph02);
+ }
+
+.rightSection .rightSectionForm{
+  background-color: var(--white);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+h6{
+  color: var( --secondary);
+}
+/* Btns */
+button{
+  margin: 15px;
+}
+
+.rightBtnContainer{
+display: flex;
+gap: 10px;
+justify-content: right;
+
+}
+
+
+
+/* Responsive (mobile) */
+@media (max-width: 767px) {
+  
+.mainContent{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+  
+  .sideMenu {
+    width: 60px;
+    padding-top: 10px;
+   
+  }
+
+
+  .rightSectionForm {
+    padding: 20px;
+  }
+
+  .coolinput {
+    width: 100%;
+    height: auto;
+  }
+
+  .rightBtnContainer {
+    justify-content: center;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .mainContent{
+    display: flex;
+  }
+  .sideMenu{
+    width: 60px;
+  }
+  .rightSection {
+    width: calc(100% - 60px);
+  }
+
+  .coolinput {
+    width: 100%;
+  }
+}
+
+
+
+

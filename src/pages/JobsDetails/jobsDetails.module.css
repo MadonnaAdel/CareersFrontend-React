@@ -1,0 +1,244 @@
+.container {
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.headBage {
+  background: no-repeat center url('../../assets/images/join.jpg');
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: top;
+}
+.icon{
+     font-size: 7px;
+    color: var(--border01);
+}
+
+.JobsDetailsHead {
+  height: 30vh;
+  background-color: var(--Fifth);
+  color: var(--primary);
+  font-size: small;
+  margin-top: 10px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+}
+
+.job-listing-card {
+  border: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.job-listing-card .card-body {
+  padding: 1rem;
+}
+
+.job-listing-card .btn {
+  min-width: 100px;
+}
+
+/*  */
+.companyImg {
+  width: 150px;
+  height: 150px;
+}
+
+.companyImg .theImg {
+  width: 100%;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.applyBtn:hover {
+  border: 1px solid var(--secondary) !important;
+  color: var(--secondary) !important;
+}
+
+.saveBtn:hover {
+  background-color: var(--secondary) !important;
+  color: white !important;
+}
+
+.title {
+  display: flex;
+}
+
+.content {
+  margin-left: 0.938rem;
+
+}
+
+.content .jobTitle {
+  color: var(--Paragraph01);
+  font-size: 24px;
+  font-weight: bold;
+
+}
+
+.content .companyName,
+.companyNameSideBar {
+  color: var(--secondary);
+  font-size: small;
+}
+
+.content .time {
+  color: var(--PlaceHolder);
+  font-size: small;
+  margin-top: -11 !important;
+}
+
+.description {
+  border: 1px solid var(--Forth);
+  border-radius: 18px;
+  height: fit-content;
+}
+
+.par1,
+.Requirements {
+  color: var(--secondary);
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.par2 {
+  font-size: 16px;
+  color: var(--Paragraph02);
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skillsList .listItem {
+  margin-left: 0.625rem;
+
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--Paragraph02);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.breakLine {
+  color: var(--secondary);
+}
+
+.sideBar,
+.othersJobsSideBar {
+  border: 1px solid var(--Forth) !important;
+  border-radius: 18px !important;
+}
+
+.sideBar {
+  background-color: var(--Fifth);
+}
+
+.othersJobsSideBar {
+  margin-top: 48px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.othersJobsSideBar::-webkit-scrollbar {
+  display: none;
+}
+
+.Requirements {
+  text-align: center;
+}
+
+.requirementsList .listItem {
+  background-color: var(--border03);
+  padding: 0.625rem;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  color: var(--Paragraph02);
+}
+
+.parent {
+  display: flex;
+}
+
+.sideBarContent {
+  margin-top: 10px;
+}
+
+.jobTitleSideBar {
+  font-size: 16px !important;
+  color: var(--Paragraph01);
+}
+
+
+.OtherJobs {
+  font-size: 20px;
+  color: var(--Paragraph01);
+  font-weight: bold;
+  background-color: #ffffff;
+  display: inline;
+  position: absolute;
+  top: -17px;
+
+  left: 16px;
+}
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+
+
+
+
+.companyLogo .logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.sideBarContent .content {
+  display: flex;
+}
+
+
+
+.subtext {
+  font-size: 0.8rem;
+  color: var(--PlaceHolder);
+  padding-left: 2px;
+}
+
+.imgSize {
+  width: 70px;
+  height: 70px;
+}
+.list{
+    list-style-type: circle !important;
+  padding-left: 20px;
+}
+@media (max-width:768px) {
+  .JobsSideBar{
+    display: none;
+  }
+  .sideBar{
+    margin-top: 20px;
+  }
+}

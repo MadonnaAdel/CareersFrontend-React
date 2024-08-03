@@ -1,0 +1,86 @@
+.container {
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.header {
+  color: #275C45;
+  font-weight: bolder;
+}
+
+.paragraph {
+  color: #727272;
+  margin-top: 29px;
+}
+
+.categoryCard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33.333% - 20px);
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.categoryCard:hover {
+  transform: scale(1.05);
+  border: 2px solid #28a745;
+}
+
+/* .highlight {
+  border: 2px solid #28a745;
+} */
+
+.categoryIcon {
+  font-size: 40px;
+  margin-right: 20px;
+  color: #28a745;
+}
+
+.categoryInfo {
+  text-align: left;
+}
+
+.categoryName {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #275C45;
+}
+
+.categoryJobs {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+.allCategoriesButton {
+  margin-top: 20px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 992px) {
+  .categoryCard {
+    flex: 1 1 calc(45% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .categoryCard {
+    flex: 1 1 calc(100% - 20px);
+    width: 100%;
+  }
+}

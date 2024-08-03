@@ -1,0 +1,111 @@
+.sidebar {
+  background-color: white !important;
+  padding-top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  left: 0; 
+  top: 0; 
+  bottom: 0;
+}
+.dashboard-container {
+  width: 100%;
+}
+
+.element {
+  font-size: 1.1em;
+  padding: 15px;
+  color: #262626;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  gap: 2px;
+  padding: 6%;
+  padding-left: 15% !important;
+  position: relative;
+}
+
+.active-flag {
+  width: 6px;
+  height: 67px;
+  background-color: #28a745;
+  margin: 0;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+}
+
+
+
+.nav-link:hover,
+.nav-link.active {
+  color: #28a745 !important;
+}
+
+.element.active,
+.element:hover {
+  background-color: #fafcf8;
+  color: #28a745 !important;
+  font-weight: bold;
+}
+
+
+.navbarBrand {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    color: #28a745; 
+}
+
+.element {
+    font-size: 1.1em;
+    padding: 1.5rem;
+    color: #262626; 
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding-left: 20%;
+    position: relative;
+}
+
+.activeFlag {
+    width: 6px;
+    height: 75px;
+    background-color: #28a745;
+    margin: 0;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0px;
+}
+
+.navLink {
+    color: #262626;
+    text-decoration: none;
+    padding-left: 0.5rem;
+}
+
+.navLink:hover, .navLink.active {
+    color: #28a745 !important; 
+}
+
+
+.element.active {
+    background-color: #FAFCF8;
+    color: #28a745 !important;
+    font-weight: bold; 
+}
+
+@media (max-width:766px) {
+    .title{
+        display: none;
+    }
+    .icon{
+        margin: auto;
+    }
+    .sidebar{
+        top: 0;
+    }
+}

@@ -1,0 +1,144 @@
+.filterButton{
+    display: none;
+    margin: 10px 0;
+}
+@media (max-width: 770px) {
+  .filterButton {
+    display: block !important;
+  }
+  .filter {
+    display: none !important;
+  }
+}
+.loader {
+  position: relative;
+  width: 240px;
+  height: 130px;
+  margin-bottom: 10px;
+  border: 1px solid #d3d3d3;
+  padding: 15px;
+  background-color: #e3e3e3;
+  overflow: hidden;
+      padding: 19px;
+      border-radius: 16px;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(110deg, rgba(227, 227, 227, 0) 0%, rgba(227, 227, 227, 0) 40%, rgba(227, 227, 227, 0.5) 50%, rgba(227, 227, 227, 0) 60%, rgba(227, 227, 227, 0) 100%);
+  animation: gradient-animation_2 1.2s linear infinite;
+}
+
+.loader .wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.loader .wrapper > div {
+  background-color: #cacaca;
+}
+
+.loader .circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.loader .button {
+  display: inline-block;
+  height: 32px;
+  width: 75px;
+}
+
+.loader .line1 {
+  position: absolute;
+  top: 11px;
+  left: 58px;
+  height: 10px;
+  width: 100px;
+}
+
+.loader .line2 {
+  position: absolute;
+  top: 34px;
+  left: 58px;
+  height: 10px;
+  width: 150px;
+}
+
+.loader .line3 {
+  position: absolute;
+  top: 57px;
+  left: 0px;
+  height: 10px;
+  width: 100%;
+}
+
+.loader .line4 {
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  height: 10px;
+  width: 92%;
+}
+
+@keyframes gradient-animation_2 {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+.HeadBg{
+  background: no-repeat center url("../../assets/images/30080078_benner_1.jpg");
+background-size: cover;
+}
+
+
+.InputContainer {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.205);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  padding-inline: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+    width: 40%;
+}
+
+.input {
+  width: 170px;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+  caret-color: var(--primary);
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.094);
+
+}
+
+.labelforsearch {
+  cursor: text;
+  padding: 0px 12px;
+}
+
+.searchIcon {
+  width: 13px;
+}
+
+.searchIcon path {
+  fill: rgb(114, 114, 114);
+}
+

@@ -1,0 +1,89 @@
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 889px;
+    position: relative;
+}
+
+.register .loginContain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register .loginContain .registerForm {
+    border: 1px solid var(--main-color);
+    border-radius: 12.43px;
+}
+
+
+.register .loginContain .registerForm .label {
+    padding: 0 7px;
+    bottom: 31px;
+    left: 11px;
+    position: absolute;
+}
+
+.register .loginContain .registerForm .sectionRigth {
+    background-color: var(--background);
+    display: flex;
+    border-top-right-radius: 12.43px;
+    border-bottom-right-radius: 12.43px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+}
+
+.register .loginContain .registerForm .sectionRigth h2 {
+    margin-bottom: 100px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.sectionRigth .rigth-img {
+    width: 444px;
+}
+
+@media (max-width: 790px) {
+    .register .loginContain {
+        justify-content: center;
+    }
+
+    .register .registerForm .sectionRigth {
+        display: none !important;
+    }
+
+    .register .loginContain .registerForm {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .register .loginContain .registerForm .sectionLeft {
+        width: 95%;
+    }
+}
+
+@media (max-width: 712px) {
+    .register .loginContain .registerForm {
+        width: 95%;
+    }
+}
+
+.register .loginContain .registerForm .sectionLeft .line {
+    width: 300px;
+    height: 1px;
+    background: rgb(119 119 119 / 24%);
+}
+
+.errorMessage {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: red;
+    margin-top: 5px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    }

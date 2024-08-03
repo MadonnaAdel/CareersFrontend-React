@@ -1,0 +1,7 @@
+.equalHeight {
+  display: flex;
+}
+
+.equalHeight > .col {
+  flex: 1;
+}

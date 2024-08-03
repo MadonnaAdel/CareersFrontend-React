@@ -1,0 +1,146 @@
+.container {
+  width: 100%; /* 52.1875rem */
+  border: 1px solid var(--border01);
+  border-radius: 1rem; /* 16px */
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease, border 0.3s ease; 
+}
+.container:hover{
+  background-color: var(--Fifth);
+  border: 1px solid var(--secondary);
+
+}
+
+.padding{
+  padding-top: 1rem;
+}
+
+
+.marginLeft {
+  margin-left: 1rem; /* 16px */
+}
+
+.title {
+  margin-bottom: 0.25rem; /* 4px */
+  
+}
+.titleLink{
+  text-decoration: none !important;
+  color: var(--Paragraph01);
+}
+.subtext {
+  font-size: 0.75rem; /* 12px */
+  color: var(--PlaceHolder);
+}
+
+.imgSize{
+  width:60px;
+  height:60px;
+  border-radius: 50%;
+}
+
+
+
+
+.separator {
+  width:85%; /* 38.3rem */
+  /* margin-left: 1.5rem; */ /* Commented out as it's not being converted to rem */
+  margin-top: 1rem; /* 16px */
+  margin-bottom: 0.875rem; /* 14px */
+  border: solid 1px var(--border01);
+}
+
+.container2 {
+        width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 7rem; /* 138px */
+}
+
+.jobDescription {
+  width: 85%; /* 605px */
+  font-size: 1rem; /* 1rem */
+  font-weight: 400;
+  line-height: 1.5rem; /* 24px */
+  margin: 0;
+  color: var(--Paragraph01);
+}
+
+.button {
+  border: none;
+  background-color: #01a84d;
+  color: white;
+  font-size: 1rem; /* 1rem */
+  margin: 0; 
+  padding:0.4rem 0.9rem;
+}
+
+.detailsContainer {
+     width: 85%;
+}
+.fav{
+  width: 30px;
+  height:30;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 0;
+
+}
+.container2
+{
+  width: 100%;
+
+  gap:0;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+  .button{
+    width: 100%;
+  }
+  .detailsContainer{
+    width: 100%;
+    padding-bottom: 1rem;
+}
+  }
+
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .button {
+    border: none;
+    background-color: #01a84d;
+    color: white;
+    font-size: 0.7rem; /* 1rem */
+    margin: 0; 
+    padding:0.3rem 0.8rem;
+  }
+
+}
+
+
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+  .button {
+    border: none;
+    border-radius: 0.5rem; /* 8px */
+    background-color: #01a84d;
+    color: white;
+    font-size: 0.8rem; /* 1rem */
+    margin: 0; 
+    padding:0.3rem 0.8rem;
+  }}
+
+

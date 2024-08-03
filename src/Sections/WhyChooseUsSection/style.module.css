@@ -1,0 +1,92 @@
+
+.container {
+  padding-left: 75px;
+  padding-right: 75px;
+  margin: 0 auto; /* Center the container */
+  /* max-width: 90%; 
+  overflow-x: hidden;  */
+}
+
+.parent {
+  padding: 75px;
+  
+}
+.parent .par {
+  font-size: 16px;
+  color: var(--secondary);
+}
+.parent h2{
+  color: var(--primary);
+}
+
+.parent .btn1{
+  background-color: var(--secondary);
+  color: var(--white);
+  border-radius: 9px;
+  font-size: 16px;
+  padding: 5px 15px;
+  margin-top: 20px;
+  border: 1px solid var(--secondary) !important;
+}
+.photos {
+  width: 100%;
+  padding: 75px;
+ 
+}
+
+.photo {
+  width: 100%;
+  height: auto; 
+  display: block; 
+}
+ .glassy{
+  background:no-repeat center url('/public/back.svg');
+  background-size: cover;
+  text-align:  center;
+  padding: 60px;
+  margin-top: 40px;
+ }
+
+ .mainTitle{
+  color: var(--white);
+  margin-bottom: 30px;
+ }
+
+ .subTitle{
+  font-size: medium;
+  color: var(--white);
+  margin-top: 10px;
+ }
+
+ .paragraph{
+  color: var(--white);
+  font-size: small;
+  margin-top: 10px;
+ }
+
+/* mopille @media  */
+@media screen  and (max-width:768px){
+  .photo {
+    width: 100%;
+    height: auto; 
+    display: block; 
+  }
+
+  .container {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 0 auto; /* Center the container */
+    /* max-width: 90%; 
+    overflow-x: hidden;  */
+  }
+
+  .parent {
+    padding: 35px;
+  }
+  .photos {
+  
+    padding: 75px;
+   
+  }
+
+}

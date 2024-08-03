@@ -1,0 +1,97 @@
+.jobSeekerContainer {
+  background-color: var(--white);
+  width: 100%;
+  max-width: 16.5rem;
+  border-radius: 1rem; /* 16px */
+  border: solid 1px var(--border01);
+  margin: 0.9375rem 0; /* 15px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: background-color 0.5s ease, border 0.5s ease;
+  margin-bottom: 1.5rem !important;
+  flex-grow: 1; 
+  height: 300px;
+}
+
+.jobSeekerContainer:hover {
+  background-color: var(--Fifth);
+  border: solid 0.0625rem var(--secondary); /* 1px */
+  cursor: pointer;
+}
+
+.contentContainer {
+  width: 90%;
+  max-width: 13.25rem; /* 212px */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* الجديد */
+}
+
+.circularImage {
+  width: 5rem; /* 80px */
+  height: 5rem; /* 80px */
+  border: solid 0.0625rem var(--secondary); /* 1px */
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 1.5rem; /* 24px */
+  font-weight: bold;
+  margin-top: 0.5rem !important;
+}
+
+.jobTitle {
+  color: var(--secondary);
+  font-size: 0.75rem; /* 12px */
+  margin-bottom: 0.5rem;
+}
+
+.locationContainer {
+  background-color: var(--border03);
+}
+
+.locationText {
+  font-size: 0.75rem; 
+  color: var(--Paragraph02);
+}
+
+.separator {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 14px; /* 14px */
+  margin-top: 14px; /* 14px */
+  border: solid 1px var(--border01); /* 1px */
+}
+
+.skillsContainer {
+  width: 100%;
+  margin: auto;
+}
+
+.viewProfileButton {
+  margin-top: 0.875rem; /* 14px */
+  font-size: 1rem;
+  background-color: var(--secondary);
+  color: var(--white);
+  width: 100%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0;
+}
+
+.viewProfileButton:hover {
+  background-color: var(--Third);
+  color: var(--white);
+}
+
+
+@media (max-width: 991.98px) {
+    .viewProfileButton {
+    font-size: 14px;
+
+}
+}

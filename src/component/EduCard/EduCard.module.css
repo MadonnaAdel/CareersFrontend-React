@@ -1,0 +1,63 @@
+/* StyledCard.module.css */
+.card {
+  background-color: var(--background);
+  border: none !important;
+  border-radius: 1rem;
+  padding: 20px;
+  width: 70%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.arrowLeft {
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-right: 20px solid var(--background);
+  border-bottom: 20px solid transparent;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.cardSubtitle {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #4CAF50;
+}
+
+.cardText {
+  font-size: 0.9em;
+  color: #666;
+  margin: 10px 0;
+}
+
+.dateRange {
+  display: inline-block;
+  background-color: #ffffff;
+  color: var(--primary);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  width: 50%;
+}
+
+@media (max-width: 575.98px) {
+  .card {
+    width: 96% ;
+    margin: 1rem;
+    
+  }
+}
+@media (max-width: 767.98px) {
+  .card {
+    width: 90% ;
+    
+  }
+}

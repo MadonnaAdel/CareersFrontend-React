@@ -1,0 +1,10 @@
+
+.slider .rangeslider__fill {
+    background-color: #275C45 !important;
+  }
+  .value{
+    color: #275C45;
+    display: flex;
+    justify-content: space-between;
+  }
+  

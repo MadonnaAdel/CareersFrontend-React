@@ -1,0 +1,145 @@
+
+.searchPart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    background: no-repeat center url('../../assets/images/30080078_benner_1.jpg');
+    background-size: cover;
+}
+
+.borderBottom{
+    padding-bottom: 1.125rem;
+    border-bottom: 1px solid var(--secondary);
+}
+
+.title {
+    margin-bottom: 0.25rem; 
+  }
+
+.companyName{
+    margin-bottom: 0.25rem; 
+    color: var(--secondary);
+    font-size: 0.875rem;
+}
+
+.subtext {
+    font-size: 0.8rem;
+    color: var(--PlaceHolder);
+    padding-left: 2px;
+  }
+
+  .subtextitle{
+    font-size: 1rem;
+    color: var(--Paragraph02);
+  }
+
+
+
+  /* form style-start */
+
+  .form {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+   
+}
+
+.form .formContain {
+    align-items: center;
+}
+
+.form .formContain .formContent {
+    border: 1px solid var(--main-color);
+    border-radius: 12.43px;
+}
+
+.btn{
+    background-color: var( --secondary);
+    padding: 5px 20px;
+    color: white;
+
+}
+.btnBack{
+    background-color: white;
+    padding: 5px 20px;
+    color: var( --secondary);
+    border: 1px solid var(--secondary);
+}
+
+.btn:hover{
+    background-color: var( --white);
+    color: var( --secondary);
+    border: 1px solid var(--secondary);
+}
+.btnBack:hover{
+    background-color: var( --secondary);
+    color: white;
+}
+
+
+
+.form .formContain .formContent .label {
+    padding: 0 7px;
+    bottom: 52px;
+    left: 11px;
+    position: absolute;
+    
+}
+
+.imgSize
+{
+    width: 70px;
+    height: 70px;
+}
+
+
+
+
+
+@media (max-width: 790px) {
+    .form .formContain {
+        justify-content: center;
+    }
+
+    .form .formContent .sectionRigth {
+        display: none !important;
+    }
+
+    .form .formContain .formContent {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form .formContain .formContent .sectionLeft {
+        width: 95%;
+    }
+}
+
+@media (max-width: 712px) {
+    .form .formContain .formContent {
+        width: 95%;
+    }
+}
+
+
+
+.errorMessage {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: red;
+    margin-top: 5px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    }
+
+  /* form style-end */
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+
+strong{
+    margin-top: 0 !important;
+}
+.table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-color-type: var(--bs-table-striped-color);
+    --bs-table-bg-type: rgb(255 255 255) !important;
+    
+    
+}
+
+.table-hover>tbody>tr:hover>* {
+    --bs-table-color-state: var(--bs-table-hover-color);
+    --bs-table-bg-state: rgb(255 255 255);
+}
+.headBg{
+    background-color:#F6F7FF !important;
+}
+.headBorderRaduisActions{
+
+    border-radius: 0rem 1rem 0 0;
+}
+
+.headBorderRaduis1JobTitle{
+
+    border-radius: 1rem 0rem 0 0;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+
+}

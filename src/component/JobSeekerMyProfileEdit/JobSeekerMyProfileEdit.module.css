@@ -1,0 +1,22 @@
+.form-control {
+  color: #989da6 !important;
+}
+
+
+.inputLabel {
+  font-size: 1rem;
+  bottom: 70%;
+  left: 2%;
+  width: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+ 
+.jobSeekerInput {
+  color: var(--PlaceHolder);
+  padding-left: 24px;
+}
+
+.myButton {
+  background-color: var(--secondary) !important;
+}

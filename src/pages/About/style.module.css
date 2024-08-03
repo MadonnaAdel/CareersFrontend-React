@@ -1,0 +1,152 @@
+.aboutUs {
+    padding: 20px;
+  }
+  
+  .fullWidthBackground {
+      background: no-repeat center url("../../assets/images/30080078_benner_1.jpg");
+background-size: cover;
+    padding: 40px 0;
+  }
+
+  .fullWidthText {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+  
+  .header {
+    font-size: 2.5rem;
+    color: #275C45;
+    margin-bottom: 1rem;
+  }
+  
+  .subHeader {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+  }
+  
+  .descriptionSection, .leadersSection, .teamSection {
+    margin-bottom: 40px;
+  }
+  
+  .descriptionSection h3, .leadersSection h3, .teamSection h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #275C45;
+  }
+  *{
+    margin: 0;
+    padding: 0;
+    
+}
+
+  body {
+    overflow-x: hidden; 
+  }
+  
+
+  .members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .teamMember {
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .teamMember img {
+    border-radius: 50%;
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .teamMember h4 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .teamMember p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #777;
+  }
+  
+  .socialLinks {
+    display: flex;
+    justify-content: space-evenly;
+
+    margin-top: 10px;
+  }
+  
+  .socialLinks a {
+    margin: 0 5px;
+    color: #01A84D;
+    font-size: 1.2rem;
+   
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAFCF8;
+  }
+  
+  .socialLinks a:hover {
+    color: darkgreen;
+    border-color: darkgreen;
+  }
+  .descriptionSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .descriptionSection div {
+    flex: 1;
+    /* padding: 20px; */
+  }
+  
+  .descriptionSection h3 {
+    font-size: 2rem;
+    color: #275C45;
+    margin-bottom: 20px;
+  }
+  
+  .descriptionSection p {
+    font-size: 1rem;
+    color: #6c757d;
+  }
+  
+  .descriptionSection .img {
+    max-width: 100%;
+    height: 553px;
+    width: 544px;
+  }
+  .caresrs{
+    margin-bottom: 166px;
+    font-size: 19px;
+    color: #275C45;
+  }
+  .caresrs1{
+    margin-bottom: 28px;
+  }
+  .caresrs1 span{
+    color: #01A84D;
+  }
+  

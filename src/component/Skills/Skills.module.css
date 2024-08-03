@@ -1,0 +1,17 @@
+.skillContainer {
+  background-color: #f6f7ff;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 5px 7px; 
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skillText {
+  font-size: 12px;
+margin: 0 !important; 
+  color: #727272;
+  
+}

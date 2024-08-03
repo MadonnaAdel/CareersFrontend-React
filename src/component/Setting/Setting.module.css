@@ -1,0 +1,21 @@
+.form-control{
+    color: #989da6 !important;
+  }
+  
+  
+  .inputLabel {
+    font-size: 1rem;
+    bottom: 70%;
+    left: 2%;
+    width: auto;
+    /* text-align: center; */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .jobSeekerInput {
+    height: 58px;
+        color: var(--PlaceHolder);
+            padding-left: 24px;
+  
+  
+  }

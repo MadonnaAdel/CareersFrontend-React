@@ -1,0 +1,10 @@
+.sidebar {
+  background-color: white !important;
+top:0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 0;
+  padding-top: 100px;
+}

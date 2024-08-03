@@ -1,0 +1,38 @@
+.card{
+    border : 1px solid  var(--Forth) !important;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgb(0 0 0 / 7%);
+}
+.recentJobsCard{
+    border: none;
+    box-shadow: 0 6px 16px rgb(0 0 0 / 7%);
+
+    
+
+}
+.cardBody{
+    padding: 3rem 3rem !important;
+
+}
+
+.listGroup{
+    border: 1px solid var(--Forth) !important;
+    border-radius: 16px !important;
+    margin: 4px 16px !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+.clockText{
+    color: var(--PlaceHolder);
+}
+.separator{
+    color: var(--border01);
+}
+@media (max-width: 991.98px) {
+    .cardBody{
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    }
+  }

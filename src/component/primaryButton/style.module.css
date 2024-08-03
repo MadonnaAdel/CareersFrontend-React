@@ -1,0 +1,14 @@
+.btn{
+    background-color: var( --secondary);
+    color: var(--white);
+
+    border-radius: 8px;
+    text-align: center;
+    outline: none;
+    border: none;
+    padding: 1rem;
+}
+.btn:hover{
+    background-color: var( --white);
+    color: var(--secondary)     ;
+}

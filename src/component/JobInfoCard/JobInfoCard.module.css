@@ -1,0 +1,54 @@
+.Container {
+  text-align: center;
+  border-radius: 0.5rem; /* 8px */
+  padding: 0.125rem; /* 2px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
+}
+
+.Text {
+  font-size: 0.8rem; 
+  margin-left: 4px !important; /* 20px */
+  color: var(--Paragraph02);
+}
+@media only screen and (max-width: 600px){
+   .Text {
+  font-size: 0.6rem; 
+
+}
+.Container
+{
+    margin-right: 4px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+
+.Container
+{
+    margin-right: 12px;
+    flex-wrap: wrap;
+
+}
+.Text {
+  font-size: 0.7rem; 
+
+}
+}
+@media only screen and (max-width: 992px) {
+
+  .Container
+  {
+      margin-right: 12px;
+      flex-wrap: wrap;
+  
+  }
+}
+@media (max-width: 1199.98px) {
+  .Text {
+    font-size: 0.7rem; 
+  }
+}
