@@ -1,8 +1,7 @@
 import axios from 'axios';
-import { t } from 'i18next';
 const axiosInstance = axios.create({
-  //  baseURL: "https://careers-api-six.vercel.app/",
- baseURL: "http://localhost:3001",
+   baseURL: "https://careers-api-six.vercel.app/",
+//  baseURL: "http://localhost:3001",
 headers: {
   'Content-Type': 'application/json',
 },

@@ -3,13 +3,17 @@ import { Form, Button, Col, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./JobSeekerMyProfileEdit.module.css";
 import { useDispatch } from "react-redux";
-import { fetchUserById, fetchUsers, updateUser } from "../../store/Slices/usersSlice";
+import {
+  fetchUserById,
+  fetchUsers,
+  updateUser,
+} from "../../store/Slices/usersSlice";
 import { toast } from "react-toastify";
 
 const JobSeekerMyProfileEdit = () => {
   const [user, setUser] = useState({});
   const dispatch = useDispatch();
-  const userId = localStorage.getItem('userId');
+  const userId = localStorage.getItem("userId");
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [formData, setFormData] = useState({
@@ -101,7 +105,6 @@ const JobSeekerMyProfileEdit = () => {
     }
   };
 
-
   const handleSaveChanges = async () => {
     const updatedUser = new FormData();
 
@@ -111,13 +114,17 @@ const JobSeekerMyProfileEdit = () => {
           updatedUser.append("profilePhoto", formData.profilePhoto);
         }
       } else if (key === "socialMedia") {
-        updatedUser.append("socialMedia", JSON.stringify({
-          facebook: formData.socialMedia.facebook,
-          linkedin: formData.socialMedia.linkedin
-        }));
-
+        updatedUser.append(
+          "socialMedia",
+          JSON.stringify({
+            facebook: formData.socialMedia.facebook,
+            linkedin: formData.socialMedia.linkedin,
+          })
+        );
       } else if (key === "skills") {
-        selectedSkills.forEach(skill => updatedUser.append("skills[]", skill));
+        selectedSkills.forEach((skill) =>
+          updatedUser.append("skills[]", skill)
+        );
       } else {
         updatedUser.append(key, formData[key]);
       }
@@ -127,10 +134,8 @@ const JobSeekerMyProfileEdit = () => {
 
     if (res.payload) {
       toast.success(`your profile has been updated successfully`);
-
     } else {
       toast.error("Error saving changes. Please try again.");
-
     }
   };
 
@@ -148,17 +153,16 @@ const JobSeekerMyProfileEdit = () => {
     setSelectedSkills(selectedSkills.filter((item) => item !== skill));
   };
 
-
-
-
-
-
   return (
     <Container fluid>
       <h4 className="mt-4 mb-5">My Profile</h4>
       <div className=" shadow-lg rounded-3 p-4 mt-5 mb-5 ">
         <Form className={`${styles.formContainer}`}>
-          <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+          <Form.Label
+            className={` bg-white ${styles.inputLabel}`}
+            column
+            sm={2}
+          >
             Upload Profile Photo
           </Form.Label>
           <Form.Control
@@ -167,7 +171,11 @@ const JobSeekerMyProfileEdit = () => {
             onChange={handleFileChange}
           />
           <Form.Group className="mb-4 position-relative">
-            <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+            <Form.Label
+              className={` bg-white ${styles.inputLabel}`}
+              column
+              sm={2}
+            >
               First Name
             </Form.Label>
             <Col>
@@ -177,14 +185,20 @@ const JobSeekerMyProfileEdit = () => {
                 onChange={handleChange}
                 className={`${styles.jobSeekerInput}`}
                 placeholder={
-                  !formData.firstName ? "Enter your first name" : formData.firstName
+                  !formData.firstName
+                    ? "Enter your first name"
+                    : formData.firstName
                 }
               />
             </Col>
           </Form.Group>
 
           <Form.Group className="mb-4 position-relative">
-            <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+            <Form.Label
+              className={` bg-white ${styles.inputLabel}`}
+              column
+              sm={2}
+            >
               Last Name
             </Form.Label>
             <Col>
@@ -194,14 +208,20 @@ const JobSeekerMyProfileEdit = () => {
                 onChange={handleChange}
                 className={`${styles.jobSeekerInput}`}
                 placeholder={
-                  !formData.lastName ? "Enter your last name" : formData.lastName
+                  !formData.lastName
+                    ? "Enter your last name"
+                    : formData.lastName
                 }
               />
             </Col>
           </Form.Group>
 
           <Form.Group className="mb-4 position-relative">
-            <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+            <Form.Label
+              className={` bg-white ${styles.inputLabel}`}
+              column
+              sm={2}
+            >
               Overview
             </Form.Label>
             <Col>
@@ -212,11 +232,11 @@ const JobSeekerMyProfileEdit = () => {
                 onChange={handleChange}
                 className={`${styles.jobSeekerInput} `}
                 placeholder={
-                  !formData.overview ? "Tell us about you" : formData.overview}
+                  !formData.overview ? "Tell us about you" : formData.overview
+                }
               />
             </Col>
           </Form.Group>
-
 
           <div className="form-group input-component mt-4">
             <label htmlFor="multiSkills" className="">
@@ -245,11 +265,12 @@ const JobSeekerMyProfileEdit = () => {
             </div>
           </div>
 
-
-
-
           <Form.Group className="mb-4 position-relative">
-            <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+            <Form.Label
+              className={` bg-white ${styles.inputLabel}`}
+              column
+              sm={2}
+            >
               Email Address
             </Form.Label>
             <Col>
@@ -263,7 +284,11 @@ const JobSeekerMyProfileEdit = () => {
           </Form.Group>
 
           <Form.Group className="mb-4 position-relative">
-            <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+            <Form.Label
+              className={` bg-white ${styles.inputLabel}`}
+              column
+              sm={2}
+            >
               Phone
             </Form.Label>
             <Col>
@@ -281,7 +306,11 @@ const JobSeekerMyProfileEdit = () => {
           </Form.Group>
 
           <Form.Group className="mb-4 position-relative">
-            <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+            <Form.Label
+              className={` bg-white ${styles.inputLabel}`}
+              column
+              sm={2}
+            >
               Category
             </Form.Label>
             <Col>
@@ -304,7 +333,11 @@ const JobSeekerMyProfileEdit = () => {
           </Form.Group>
 
           <Form.Group className="mb-4 position-relative">
-            <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+            <Form.Label
+              className={` bg-white ${styles.inputLabel}`}
+              column
+              sm={2}
+            >
               Experience Level
             </Form.Label>
             <Col>
@@ -315,7 +348,9 @@ const JobSeekerMyProfileEdit = () => {
                 onChange={handleChange}
                 className={`${styles.jobSeekerInput}`}
                 placeholder={
-                  !formData.experienceLevel ? "Select Experience Level" : formData.experienceLevel
+                  !formData.experienceLevel
+                    ? "Select Experience Level"
+                    : formData.experienceLevel
                 }
               >
                 <option>Junior</option>
@@ -328,7 +363,11 @@ const JobSeekerMyProfileEdit = () => {
           </Form.Group>
 
           <Form.Group className="mb-4 position-relative">
-            <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+            <Form.Label
+              className={` bg-white ${styles.inputLabel}`}
+              column
+              sm={2}
+            >
               Desired Job Type
             </Form.Label>
             <Col>
@@ -339,20 +378,26 @@ const JobSeekerMyProfileEdit = () => {
                 onChange={handleChange}
                 className={`${styles.jobSeekerInput}`}
                 placeholder={
-                  !formData.desiredJobType ? "Select Desired Job Type" : formData.desiredJobType
+                  !formData.desiredJobType
+                    ? "Select Desired Job Type"
+                    : formData.desiredJobType
                 }
               >
-                <option>Full Time </option>
+                <option>Full Time</option>
                 <option>Part Time</option>
-                <option>Temporary</option>
-                <option>Freelance</option>
                 <option>Internship</option>
+                <option>Freelance</option>
+                <option>Other</option>
               </Form.Control>
             </Col>
           </Form.Group>
 
           <Form.Group className="mb-4 position-relative">
-            <Form.Label className={` bg-white ${styles.inputLabel}`} column sm={2}>
+            <Form.Label
+              className={` bg-white ${styles.inputLabel}`}
+              column
+              sm={2}
+            >
               Qualifications
             </Form.Label>
             <Col>
@@ -363,7 +408,9 @@ const JobSeekerMyProfileEdit = () => {
                 onChange={handleChange}
                 className={`${styles.jobSeekerInput}`}
                 placeholder={
-                  !formData.qualifications ? "Select Qualifications" : formData.qualifications
+                  !formData.qualifications
+                    ? "Select Qualifications"
+                    : formData.qualifications
                 }
               >
                 <option>Bachelor's Degree</option>
@@ -391,7 +438,6 @@ const JobSeekerMyProfileEdit = () => {
                 className={`${styles.jobSeekerInput}`}
                 placeholder="Enter your Facebook profile link"
               />
-
             </Col>
           </Form.Group>
 
@@ -446,7 +492,6 @@ const JobSeekerMyProfileEdit = () => {
               City
             </Form.Label>
             <Col>
-
               <Form.Control
                 name="city"
                 value={formData.city}
@@ -468,7 +513,6 @@ const JobSeekerMyProfileEdit = () => {
               Complete Address
             </Form.Label>
             <Col>
-
               <Form.Control
                 name="completeAddress"
                 value={formData.completeAddress}
@@ -489,9 +533,7 @@ const JobSeekerMyProfileEdit = () => {
             </Button>
           </div>
         </Form>
-
       </div>
-
     </Container>
   );
 };
