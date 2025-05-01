@@ -46,20 +46,26 @@ export default function SignUpStepTwo() {
   }, [selectedSkills]);
 
   async function signUp(val) {
-    
     try {
       updateFormData(val);
       const User = { ...formData, ...val };
-      const isEmailExist = allUsers.find((user) => user.email === User.email);
-      if (!isEmailExist) {
-        dispatch(registerUser(User));
+      // const isEmailExist = allUsers.find((user) => user.email === User.email);
+      // if (!isEmailExist) {
+
+      const res = await dispatch(registerUser(User));
+      console.log(res);
+      if (res.payload && res.payload.token) {
+        toast.success("Account Created Successfully");
         navigate("/login");
+      } else {
+        toast.error("The Email is already exist. Please try again.");
       }
+
+      // }
     } catch (err) {
       toast.error(err);
     }
   }
- 
 
   const validationSchema = Yup.object({
     city: Yup.string().required("The city is required"),

@@ -49,19 +49,19 @@ export default function Login() {
       const decoded = jwtDecode(credentialResponse.credential);
       const User = { email: decoded.email };
       const isUserFind = allUsers.find((user) => user.email === User.email);
-      if (!isUserFind) {
-        toast.error("Email Not Found");
-      } else {
+      // if (!isUserFind) {
+      //   toast.error("Email Not Found");
+      // } else {
         const res = await dispatch(loginUserWithGoogle(User));
         if (res.payload && res.payload.token) {
           login(res.payload.token, res.payload.user);
           navigate("/home");
-             (res);
+            
         } else {
           toast.error("Login failed. Please check your credentials.");
            (res);
         }
-      }
+      // }
     } catch (error) {
        (error);
       toast.error("An error occurred during Google login. Please try again.");

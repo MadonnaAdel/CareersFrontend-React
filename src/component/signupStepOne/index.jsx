@@ -73,6 +73,7 @@ export default function SignUpStepOne() {
 
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
+      
       const decoded = jwtDecode(credentialResponse.credential);
       const User = {
         firstName: decoded.given_name,
@@ -317,6 +318,7 @@ export default function SignUpStepOne() {
                 onSuccess={(credentialResponse) => {
                   handleGoogleSuccess(credentialResponse);
                 }}
+                 redirectUri="https://careers--psi.vercel.app/auth/callback"
               />
             </div>
 
