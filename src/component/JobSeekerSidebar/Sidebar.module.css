@@ -1,9 +1,10 @@
 .sidebar {
-  background-color: white !important;
+  background-color: rgb(255, 255, 255) !important;
   padding-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   position: fixed;
   height: 100vh;
+  max-width: 15%;
   overflow-y: auto;
   left: 0; 
   top: 0; 
@@ -98,7 +99,7 @@
     font-weight: bold; 
 }
 
-@media (max-width:766px) {
+@media (max-width:1055px) {
     .title{
         display: none;
     }

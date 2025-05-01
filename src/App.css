@@ -70,11 +70,6 @@ h5{
 .main-border{
     border: 1px solid var(--secondary);
 }
-/* .row>* {
- 
-  padding-left: 0 !important;
-  padding-right: 3rem !important;
-} */
 
 .table>:not(caption)>*>* {
   padding-top: 2rem !important;
@@ -102,10 +97,6 @@ h5{
     transition: background-color 0.3s ease;
 }
 
-/* .pagination a.page {
-    border: 1px solid #ddd;
-
-} */
 
 .pagination a.prev,
 .pagination a.next {
@@ -181,9 +172,11 @@ h5{
 .dropdown-item:focus, .dropdown-item:hover {
   background-color: var(--border02); 
 }
+
 *::-webkit-scrollbar {
   display: none;
 }
+
 .text-third{
   color: var(--Third);
 }

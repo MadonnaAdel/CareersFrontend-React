@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from './../../axioseConfig/instance';
 
-// Define asynchronous thunk actions
 export const getAllJobs = createAsyncThunk('jobs/getAllJobs', async () => {
     const res = await axiosInstance.get('/jobs/get');
     return res.data.jobs;
@@ -25,7 +24,7 @@ export const getJobsByCompanyName = createAsyncThunk('jobs/getJobsByCompanyName'
 });
 export const getAllJobsByCompanyId = createAsyncThunk('jobs/getAllJobsByCompanyId', async (companyId) => {
     const res = await axiosInstance.get(`/jobs/getAllJobsByCompanyId/${companyId}`);
-    console.log('his is slice', res.data.jobs);
+    ('his is slice', res.data.jobs);
     return res.data.jobs;
 });
 
@@ -61,7 +60,6 @@ export const postJob = createAsyncThunk('jobs/postJob', async (jobData) => {
 });
 
 
-//filter the range of salary
 export const filterSalary = createAsyncThunk('jobs/filter', async ({ minBudget, maxBudget }) => {
     const res = await axiosInstance.patch(`/jobs/filter`, { minBudget, maxBudget });
     return res.data;
@@ -84,7 +82,6 @@ export const deleteAllJobs = createAsyncThunk('jobs/deleteAllJobs', async () => 
     return res.data;
 });
 
-// Create a slice for jobs
 const jobsSlice = createSlice({
     name: 'jobs',
     initialState: {
@@ -92,7 +89,7 @@ const jobsSlice = createSlice({
         job: {},
         count: 0,
         loading: false,
-          status: 'idle',
+        status: 'idle',
         error: null,
     },
     reducers: {},

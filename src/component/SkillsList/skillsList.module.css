@@ -91,7 +91,6 @@ strong {
 
 .skill-item {
   margin-bottom: 10px;
-  /* إضافة هذا لتوفير تباعد بين عناصر المهارات */
 }
 
 .skill-number {
@@ -165,7 +164,6 @@ strong {
   bottom: 70%;
   left: 2%;
   width: auto;
-  /* text-align: center; */
   padding-left: 1rem;
   padding-right: 1rem;
 }

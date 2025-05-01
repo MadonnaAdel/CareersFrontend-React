@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllJobs } from "../../store/Slices/FetchJobsSlice";
 import JobCard from "../../component/JobCard";
 import JobsFilter from "../../component/JobsFilter";
-import { Row, Col, Container, Button, Modal, InputGroup, Dropdown } from "react-bootstrap";
-import styles from "./jobs.module.css"; // Import the CSS module
-import { Form, Link } from "react-router-dom";
+import { Row, Col, Container, Button,} from "react-bootstrap";
+import styles from "./jobs.module.css"; 
+import {  Link } from "react-router-dom";
 import PopUp from "../../component/PopUp";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -46,10 +46,10 @@ export default function Jobs() {
     }
     setCurrentPage(1);
   };
-  const handelSortByDate =()=> {
-  const sortedFilteredJobs = [...filteredJobs].sort((a, b) => new Date(b.timeStamp) - new Date(a.timeStamp));
-   setFilteredJobs(sortedFilteredJobs);
-   setCurrentPage(1);
+  const handelSortByDate = () => {
+    const sortedFilteredJobs = [...filteredJobs].sort((a, b) => new Date(b.timeStamp) - new Date(a.timeStamp));
+    setFilteredJobs(sortedFilteredJobs);
+    setCurrentPage(1);
     setSortedBy("Date Created");
   }
 
@@ -63,7 +63,11 @@ export default function Jobs() {
     e.preventDefault();
     setCurrentPage(pageNumber);
   };
-console.log(jobs);
+  const handleRemoveJob = (jobId) => {
+    const updatedJobs = localSavedJobs.filter(savedJob => savedJob.jobId && savedJob.jobId._id !== jobId);
+    setLocalSavedJobs(updatedJobs);
+    dispatch(getSavedJobs(userId));
+  };
   return (
     <>
       <div
@@ -77,9 +81,9 @@ console.log(jobs);
       >
         <h4>Browse jobs</h4>
         <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><Link to="/Home">Home</Link></li>
-            <li class="breadcrumb-item active" aria-current="page">Jobs</li>
+          <ol className="breadcrumb">
+            <li className="breadcrumb-item"><Link to="/Home">Home</Link></li>
+            <li className="breadcrumb-item active" aria-current="page">Jobs</li>
           </ol>
         </nav>
 
@@ -93,7 +97,7 @@ console.log(jobs);
             placeholder="Search"
             onChange={handelSearch} />
 
-          <label for="input" class="labelforsearch" >
+          <label htmlFor="input" className="labelforsearch" >
             <svg viewBox="0 0 512 512"
               className={styles.searchIcon}>
               <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
@@ -117,17 +121,17 @@ console.log(jobs);
           </Col>
           <Col md={9}>
             <div className="d-flex justify-content-between align-items-center">
-              <p>All {filteredJobs.length} candidates found</p>
+              <p> {filteredJobs.length} Jobs found</p>
               <div className="d-flex align-items-center">
                 <p className="">Sorted By:</p>
 
-                <div class="dropdown mb-3">
-                  <button class="px-3 py-1 rounded-3 main-border ms-2 mb-1 dropdown-toggle text-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div className="dropdown mb-3">
+                  <button className="px-3 py-1 rounded-3 main-border ms-2 mb-1 dropdown-toggle text-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {sortedBy}
                   </button>
-                  <ul class="dropdown-menu">
-                    <li><button class="dropdown-item" type="button" onClick={handelSortByDate}>Date Created</button></li>
-                   
+                  <ul className="dropdown-menu">
+                    <li><button className="dropdown-item" type="button" onClick={handelSortByDate}>Date Created</button></li>
+
                   </ul>
                 </div>
               </div>
@@ -140,36 +144,16 @@ console.log(jobs);
                     key={job._id}
                     style={{ marginBottom: "20px" }}
                   >
-                    <JobCard job={job} />
+                    <JobCard job={job} onRemove={handleRemoveJob} />
                   </Col>
                 ))
               ) : (
-                // <>
-                //   <div class={`${styles.loader} mb-5`}>
-                //     <div class={styles.wrapper}>
-                //       <div class={styles.circle}></div>
-                //       <div className={styles.line1}></div>
-                //       <div className={styles.line2}></div>
-                //       <div className={styles.line3}></div>
-                //       <div className={styles.line4}></div>
-                //     </div>
-                //   </div>
-                //   <div class={styles.loader}>
-                //     <div class={styles.wrapper}>
-                //       <div class={styles.circle}></div>
-                //       <div className={styles.line1}></div>
-                //       <div className={styles.line2}></div>
-                //       <div className={styles.line3}></div>
-                //       <div className={styles.line4}></div>
-                //     </div>
-                //   </div>
-                  // </>
-                  <div>
+                <div>
                   <div className="imgSearchResult m-auto w-50">
                     <img src={imgSearchResult} alt="imgSearchResult" width='100%' />
                   </div>
                   <h5 className="text-center text-secondary">No results found </h5>
-              </div>
+                </div>
               )}
             </Row>
             {filteredJobs.length > jobsPerPage && (

@@ -1,5 +1,5 @@
 {
-  "name": "graduationproject",
+  "name": "careers",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -21,7 +21,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@iconscout/react-unicons": "^2.0.2",
     "@iconscout/react-unicons-monochrome": "^1.0.2",
-    "@iconscout/react-unicons-solid": "^1.0.2",
+    "@iconscout/react-unicons-solid": "^1.1.2",
     "@mui/icons-material": "^5.15.21",
     "@mui/material": "^5.15.21",
     "@mui/x-charts": "^7.8.0",

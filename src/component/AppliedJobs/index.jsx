@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Table, Badge, Button, Container, Row, Col, Dropdown } from 'react-bootstrap';
+import { Table, Badge, Button, Container, Row, Col, Dropdown, Alert } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAppliedJobsByJobSeeker } from '../../store/Slices/AppliedJobsSlice';
 import JobSeekerSidebar from '../JobSeekerSidebar';
@@ -17,7 +17,7 @@ const AppliedJobs = () => {
     dispatch(fetchAppliedJobsByJobSeeker({ userId }));
   }, [userId, dispatch]);
 
-  
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const day = String(date.getDate()).padStart(2, '0');
@@ -47,9 +47,14 @@ const AppliedJobs = () => {
 
   return (
     <Container fluid>
+      <h4 className="mt-4 mb-5">Applied Jobs</h4>
+      <div className=" shadow-lg rounded-3 p-4 mt-5 mb-5 ">
 
-          <h4 className="mt-4 mb-5">Applied Jobs</h4>
+        {appliedJobs.length > 0 ?
+
           <div style={{ border: '1px solid #B4E0D3', borderRadius: '16px', overflow: 'auto' }}>
+
+
             <Table className="w-100" striped hover>
               <thead>
                 <tr className="p-3">
@@ -58,12 +63,11 @@ const AppliedJobs = () => {
                   <th style={{ width: '20%' }} className="headBg">Date Applied</th>
                   <th className="headBg">Tracking</th>
                   <th className="headBg">Status</th>
-                  <th className="headBg headBorderRaduisActions">Actions</th>
+
                 </tr>
               </thead>
               <tbody>
                 {appliedJobs.map((job) => {
-                  const jobLocation = job.jobId.jobLocation && job.jobId.jobLocation.length > 0 ? job.jobId.jobLocation[0] : {};
                   return (
                     <tr key={job._id}>
                       <td style={{ backgroundColor: '#FFFFFF' }}>
@@ -76,32 +80,27 @@ const AppliedJobs = () => {
                           <div className="d-flex mt-1" style={{ marginTop: '1rem' }}>
                             <JobInfoCard img="/office bag.svg" text={job.jobId.JobType} backgroundColor="var(--border02)" />
                             <JobInfoCard img="/Building.svg" text={job.jobId.JoblocationType} />
-                            <JobInfoCard img="/location2.svg" text={`${jobLocation.State}, ${jobLocation.government}`} />
+                            <JobInfoCard img="/location2.svg" text={`${job?.jobId?.jobLocation.State}, ${job.jobId.jobLocation.government}`} />
                           </div>
                         </div>
                       </td>
-                      <td style={{ backgroundColor: '#FFFFFF' }}>200</td>
+                      <td style={{ backgroundColor: '#FFFFFF' }}>{job.jobId.JobSeekersCounts}</td>
                       <td style={{ backgroundColor: '#FFFFFF' }}>{formatDate(job.timeStamp)}</td>
                       <td style={{ backgroundColor: '#FFFFFF' }}>{job.appliedJobStatus}</td>
                       <td style={{ backgroundColor: '#FFFFFF' }}>{job.jobId.status}</td>
-                      <td style={{ backgroundColor: '#FFFFFF' }}>
-                        <Dropdown>
-                          <Dropdown.Toggle as={Button} variant="link" className="p-0">
-                            <UilEllipsisV />
-                          </Dropdown.Toggle>
-                          <Dropdown.Menu>
-                            <Dropdown.Item onClick={() => console.log('Show Job Details')}>Show Job Details</Dropdown.Item>
-                            <Dropdown.Item onClick={() => console.log('Edit Job Application')}>Edit Job Application</Dropdown.Item>
-                            <Dropdown.Item onClick={() => console.log('Withdraw Application')}>Withdraw Application</Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
-                      </td>
+
                     </tr>
                   );
                 })}
               </tbody>
             </Table>
-          </div>
+
+
+          </div> :
+          <Alert variant="info">No Applied jobs Yet</Alert>
+        }
+      </div>
+
     </Container>
   );
 };

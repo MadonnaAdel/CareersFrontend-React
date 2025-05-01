@@ -1,6 +1,14 @@
 .resNav{
     width: 76px;
 }
+.navBarRes{
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  
+    
+}
 @media (min-width: 992px) {
     .container, .container-lg, .container-md, .container-sm {
         max-width: 1043px !important;

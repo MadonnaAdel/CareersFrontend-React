@@ -1,4 +1,3 @@
-// import React from "react";
 import loginImage from "../../assets/images/loginSvg.svg";
 import styles from "./signUpStepOne.module.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -8,17 +7,13 @@ import { useFormContext } from "../../contexts/RegisterFormContext";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { GoogleLogin } from "@react-oauth/google";
-import {jwtDecode} from 'jwt-decode'
+import { jwtDecode } from 'jwt-decode'
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser, registerUserWithGoogle } from "../../store/Slices/usersSlice";
 export default function SignUpStepOne() {
   const { formData, updateFormData, nextStep } = useFormContext();
-  
-    const navigate = useNavigate(); 
-    const allUsers = useSelector((state) => state.users.users);
-  const dispatch = useDispatch();
-  
-  const [isSinUp, setIsSinUp] = useState("false");
+
+  const allUsers = useSelector((state) => state.users.users);
+
   const [comfirmPassVal, setComfirmPassword] = useState("");
 
   const validationSchema = Yup.object({
@@ -56,17 +51,17 @@ export default function SignUpStepOne() {
     validationSchema: validationSchema,
     onSubmit: (val) => {
       if (formik.values.password != comfirmPassVal) return;
-           const isEmailExist = allUsers.find(
-             (user) => user.email === val.email
-           );
-           if (isEmailExist) {
-             toast.error("Email already exists");
-             return;
-           } else {
-             updateFormData(val);
-             nextStep();
-           }
-    
+      const isEmailExist = allUsers.find(
+        (user) => user.email === val.email
+      );
+      if (isEmailExist) {
+        toast.error("Email already exists");
+        return;
+      } else {
+        updateFormData(val);
+        nextStep();
+      }
+
     },
   });
 
@@ -76,36 +71,32 @@ export default function SignUpStepOne() {
 
 
 
-    const handleGoogleSuccess = async (credentialResponse) => {
-      try {
-        const decoded = jwtDecode(credentialResponse.credential);
-        console.log("hellllo",decoded);
-        const User = {
-          firstName: decoded.given_name,
-          lastName: decoded.family_name,
-          email: decoded.email,
-          googleId: decoded.sub,
-          phone:"",
-          password:'',
-        };
-         const isEmailExist = allUsers.find(
-           (user) => user.email === User.email
-        );
-        if (isEmailExist) {
-          toast.error("Email already exists");
-          return;
-        } else {
-          // dispatch(registerUserWithGoogle(User));
-          updateFormData(User);
-           console.log(User);
-           nextStep();
-          //  navigate("/home");
-        }
-      } catch (error) {
-        console.error("Error during Google login", error);
-        toast.error("Error during Google login");
+  const handleGoogleSuccess = async (credentialResponse) => {
+    try {
+      const decoded = jwtDecode(credentialResponse.credential);
+      const User = {
+        firstName: decoded.given_name,
+        lastName: decoded.family_name,
+        email: decoded.email,
+        googleId: decoded.sub,
+        phone: "",
+        password: '',
+      };
+      const isEmailExist = allUsers.find(
+        (user) => user.email === User.email
+      );
+      if (isEmailExist) {
+        toast.error("Email already exists");
+        return;
+      } else {
+        updateFormData(User);
+        nextStep();
       }
-    };
+    } catch (error) {
+      console.error("Error during Google login", error);
+      toast.error("Error during Google login");
+    }
+  };
 
   return (
     <section className={styles.register}>
@@ -290,7 +281,7 @@ export default function SignUpStepOne() {
 
                 <div>
                   {formik.values.password !== comfirmPassVal &&
-                  comfirmPassVal ? (
+                    comfirmPassVal ? (
                     <span className="text-danger p-0 m-0">
                       Passwords do not match
                     </span>
@@ -328,13 +319,15 @@ export default function SignUpStepOne() {
                 }}
               />
             </div>
-         
-            <NavLink
-              to="/companyRegister"
-              className={`text-decoration-none text-center btn-outline-success border border-1 border-success rounded-2 p-2 m-2`}
+
+            <a
+              href="http://localhost:4200/Register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-decoration-none text-center btn-outline-success border border-1 border-success rounded-2 p-2 m-2"
             >
               Register As a<span className="text-success"> Company</span>
-            </NavLink>
+            </a>
           </div>
           <div className={`${styles.sectionRigth} col-5`}>
             <div className="rigth-title">

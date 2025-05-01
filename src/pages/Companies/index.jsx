@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import JobSeekersFilter from "../../component/JobSeekersFilter";
 import styles from "./Companies.module.css";
 import { Link } from "react-router-dom";
-import imgSearchResult from '../../assets/images/noResults.svg';
+import imgSearchResult from "../../assets/images/noResults.svg";
 import PopUp from "../../component/PopUp";
 import { getAllCompanies } from "../../store/Slices/companiesSlice";
 import CompanyCard from "../../component/companyCard/index";
@@ -25,12 +25,11 @@ const Companies = () => {
 
   useEffect(() => {
     dispatch(getAllCompanies());
-  
   }, [dispatch]);
 
   useEffect(() => {
     setFilteredCompanies(companies);
-    setLoading(false); 
+    setLoading(false);
   }, [companies]);
 
   const handleFilter = (filteredCompanies) => {
@@ -40,12 +39,13 @@ const Companies = () => {
 
   const handleSearch = (event) => {
     const value = event.target.value.toLowerCase();
-    if (value === '') {
+    if (value === "") {
       setFilteredCompanies(companies);
     } else {
-      const searchResult = filteredCompanies.filter(candidate =>
-        candidate.firstName.toLowerCase().includes(value) ||
-        candidate.lastName.toLowerCase().includes(value)
+      const searchResult = filteredCompanies.filter(
+        (candidate) =>
+          candidate.firstName.toLowerCase().includes(value) ||
+          candidate.lastName.toLowerCase().includes(value)
       );
       setFilteredCompanies(searchResult);
     }
@@ -54,7 +54,10 @@ const Companies = () => {
 
   const indexOfLastCandidate = currentPage * companiesPerPage;
   const indexOfFirstCandidate = indexOfLastCandidate - companiesPerPage;
-  const currentcompanies = filteredCompanies.slice(indexOfFirstCandidate, indexOfLastCandidate);
+  const currentcompanies = filteredCompanies.slice(
+    indexOfFirstCandidate,
+    indexOfLastCandidate
+  );
 
   const totalPages = Math.ceil(filteredCompanies.length / companiesPerPage);
   const handleClick = (pageNumber) => {
@@ -62,7 +65,6 @@ const Companies = () => {
       setCurrentPage(pageNumber);
     }
   };
-  console.log(companies);
 
   return (
     <>
@@ -77,8 +79,12 @@ const Companies = () => {
         <h4>Browse Companies</h4>
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
-            <li className="breadcrumb-item"><Link to="/Home">Home</Link></li>
-            <li className="breadcrumb-item active" aria-current="page">Companies</li>
+            <li className="breadcrumb-item">
+              <Link to="/Home">Home</Link>
+            </li>
+            <li className="breadcrumb-item active" aria-current="page">
+              Companies
+            </li>
           </ol>
         </nav>
         <div className={styles.InputContainer}>
@@ -99,21 +105,6 @@ const Companies = () => {
       </div>
       <Container>
         <Row>
-           {/* <Col md={3}>
-            <Button
-              variant="success"
-              className={styles.filterButton}
-              onClick={handleShow}
-            >
-              Filter
-            </Button>
-            <div className={styles.filter}>
-              <CompaniesFilter
-                companies={companies}
-                onFilter={handleFilter}
-              />
-            </div>
-          </Col> */}
           <Col md={12}>
             <Row>
               <p>All {filteredCompanies.length} Companies found</p>
@@ -122,40 +113,41 @@ const Companies = () => {
                   {[...Array(6)].map((_, index) => (
                     <Col
                       key={index}
-                      className={`d-flex align-items-center justify-content-center ${index % 3 === 1 ? 'mx-5' : ''}`}
+                      className={`d-flex align-items-center justify-content-center ${
+                        index % 3 === 1 ? "mx-5" : ""
+                      }`}
                       md={4}
                     >
-                          <div class={styles.wrapper}>
-                            <div class={styles.circle}></div>
-                            <div className={styles.line1}></div>
-                            <div className={styles.line2}></div>
-                            <div className={styles.line3}></div>
-                            <div className={styles.line4}></div>
-                          </div>
-                        
+                      <div className={styles.wrapper}>
+                        <div className={styles.circle}></div>
+                        <div className={styles.line1}></div>
+                        <div className={styles.line2}></div>
+                        <div className={styles.line3}></div>
+                        <div className={styles.line4}></div>
+                      </div>
                     </Col>
                   ))}
                 </Row>
+              ) : filteredCompanies.length > 0 ? (
+                currentcompanies.map((company, index) => (
+                  <Col
+                    key={index}
+                    md={6}
+                    lg={3}
+                    className="d-flex align-items-center justify-content-center flex-wrap"
+                  >
+                    <CompanyCard company={company} />
+                  </Col>
+                ))
               ) : (
-                filteredCompanies.length > 0 ? (
-                  currentcompanies.map((company, index) => (
-                    <Col
-                      key={index}
-                      md={6}
-                      lg={3}
-                      className="d-flex align-items-center justify-content-center flex-wrap"
-                    >
-                      <CompanyCard company={company} />
-                    </Col>
-                  ))
-                ) : (
-                  <div>
-                    <div className="imgSearchResult m-auto w-50">
-                      <img src={imgSearchResult} alt="No Results" width='100%' />
-                    </div>
-                    <h5 className="text-center text-secondary">No results found</h5>
+                <div>
+                  <div className="imgSearchResult m-auto w-50">
+                    <img src={imgSearchResult} alt="No Results" width="100%" />
                   </div>
-                )
+                  <h5 className="text-center text-secondary">
+                    No results found
+                  </h5>
+                </div>
               )}
             </Row>
             <div className="pagination">
@@ -172,7 +164,9 @@ const Companies = () => {
                   key={index}
                   href="#"
                   onClick={() => handleClick(index + 1)}
-                  className={`page ${index + 1 === currentPage ? "active" : ""}`}
+                  className={`page ${
+                    index + 1 === currentPage ? "active" : ""
+                  }`}
                 >
                   {index + 1}
                 </a>
@@ -181,7 +175,9 @@ const Companies = () => {
                 href="#"
                 onClick={() => handleClick(currentPage + 1)}
                 className="next"
-                style={{ pointerEvents: currentPage === totalPages ? "none" : "auto" }}
+                style={{
+                  pointerEvents: currentPage === totalPages ? "none" : "auto",
+                }}
               >
                 &gt;
               </a>
@@ -189,10 +185,6 @@ const Companies = () => {
           </Col>
         </Row>
       </Container>
-   
-            {/* <PopUp show={show} handleClose={handleClose} body={
-       <CompaniesFilter companies={companies} onFilter={handleFilter} />
-      } /> */}
     </>
   );
 };

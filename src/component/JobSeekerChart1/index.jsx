@@ -19,26 +19,24 @@ export default function JobTrackingChart() {
   }, [dispatch, userId]);
 
   const chartData = useMemo(() => {
+    if (!Array.isArray(appliedJobs)) {
+      return { labels: [], data: [] };
+    }
+  
     const statusCounts = appliedJobs.reduce((accumulator, job) => {
-      const status = job.appliedJobStatus; 
+      const status = job.appliedJobStatus;
       if (status) {
-        if (accumulator[status]) {
-          accumulator[status]++;
-        } else {
-          accumulator[status] = 1;
-        }
+        accumulator[status] = (accumulator[status] || 0) + 1;
       }
-      return accumulator; 
-    }, {}); 
-
-    
+      return accumulator;
+    }, {});
+  
     return {
-      
       labels: Object.keys(statusCounts),
       data: Object.values(statusCounts),
-  
     };
   }, [appliedJobs]);
+  
 
   const barChartsParams = {
     

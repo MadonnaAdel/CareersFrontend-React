@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Button, Col, Row, Container, Card, ListGroup, Badge, InputGroup } from 'react-bootstrap';
-import JobSeekerSidebar from '../JobSeekerSidebar'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserById, fetchUsers } from '../../store/Slices/usersSlice';
 import { UilAward } from '@iconscout/react-unicons'
 import { UilUserSquare } from '@iconscout/react-unicons'
 import EduCard from '../EduCard';
+import Skills from '../Skills';
 
 const ManageCV = () => {
-    const userId = '6681e2ab75a50c5ecc4d8e02';
+    const userId = localStorage.getItem('userId')
+        ;
     const user = useSelector((state) => state.users.user);
     const dispatch = useDispatch();
 
@@ -17,30 +17,26 @@ const ManageCV = () => {
         dispatch(fetchUserById(userId));
     }, [dispatch, userId]);
 
-   
+
     if (!user) {
         return <div>Loading...</div>;
     }
 
     return (
         <Container fluid>
-         
-           
-                    <h4 className="mt-4 mb-5">Manage CV</h4>
-                    <Container>
-                        {/* <UploadCV /> */}
-                        <Education educationData={user.education} />
-                        <WorkExperience workData={user.workAndExperience} />
-                        {/* <Skills skillsData={user.skills} /> */}
-                        <Button variant="success" className="mt-3">Save Changes</Button>
-                    </Container>
-           
+            <h4 className="mt-4 mb-5">Manage CV</h4>
+            <Container>
+                <Education educationData={user.education} />
+                <WorkExperience workData={user.workAndExperience} />
+                <Button variant="success" className="mt-3">Save Changes</Button>
+            </Container>
+
         </Container>
     );
 };
 
 const Education = ({ educationData }) => {
-    const [educationList, setEducationList] = useState([educationData[0] || {}]); // Initialize with the first element
+    const [educationList, setEducationList] = useState([educationData[0] || {}]); 
     const [newEducation, setNewEducation] = useState({
         title: '',
         academy: '',
@@ -50,7 +46,7 @@ const Education = ({ educationData }) => {
     });
 
     const addEducation = () => {
-        
+
         setEducationList([...educationList, { ...newEducation }]);
         setNewEducation({
             title: '',
@@ -138,16 +134,23 @@ const Education = ({ educationData }) => {
                         <Button className='mb-3' variant="primary" onClick={addEducation}>
                             Add More
                         </Button>
-                        {educationList.map((education, index) => (
-                            <EduCard
-                                key={index}
-                                title={education.title}
-                                academy={education.academy}
-                                description={education.description}
-                                from={education.from}
-                                to={education.to}
-                            />
-                        ))}
+                        {educationList
+                            .filter(education =>
+                                education &&
+                                (education.title || education.academy || education.description || education.from || education.to)
+                            )
+                            .map((education, index) => (
+                                <EduCard
+                                    key={index}
+                                    title={education.title}
+                                    academy={education.academy}
+                                    description={education.description}
+                                    from={education.from}
+                                    to={education.to}
+                                />
+                            ))}
+
+
                     </Form>
                 </Card.Body>
             </Card>
@@ -158,7 +161,7 @@ const Education = ({ educationData }) => {
 
 const WorkExperience = ({ workData }) => {
     const [workList, setWorkList] = useState(workData || []);
-  const  dispatch= useDispatch()
+    const dispatch = useDispatch()
 
 
     const [newWorkExperience, setNewWorkExperience] = useState({
@@ -170,7 +173,6 @@ const WorkExperience = ({ workData }) => {
     });
 
     const addWorkExperience = () => {
-        // dispatch(post)
         setWorkList([...workList, { ...newWorkExperience }]);
         setNewWorkExperience({
             title: '',

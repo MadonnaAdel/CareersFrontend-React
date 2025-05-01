@@ -1,17 +1,15 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from '../../axioseConfig/instance';
 
-// Fetch saved jobs for a user
 export const getSavedJobs = createAsyncThunk(
   'savedJobs/getSavedJobs',
   async (userId) => {
     const res = await axiosInstance.get(`/savedJobs/${userId}`);
-    console.log(res.data);
+     (res.data);
     return res.data;
   }
 );
 
-// Save a job
 export const postSavedJob = createAsyncThunk(
   'savedJobs/postSavedJob',
   async ({ userId, jobId }) => {
@@ -20,7 +18,6 @@ export const postSavedJob = createAsyncThunk(
   }
 );
 
-// Delete a saved job
 export const deleteSavedJob = createAsyncThunk(
   'savedJobs/deleteSavedJob',
   async (savedJobId) => {
@@ -29,7 +26,6 @@ export const deleteSavedJob = createAsyncThunk(
   }
 );
 
-// Count saved jobs by user
 export const countSavedJobsByUser = createAsyncThunk(
   'savedJobs/countSavedJobsByUser',
   async ({userId}) => {

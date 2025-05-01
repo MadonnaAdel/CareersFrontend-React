@@ -1,12 +1,11 @@
-// import React from 'react';
 import {  Row, Col, Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import styles from './ContactForm.module.css';
+import { toast } from 'react-toastify';
 
 const ContactForm = () => {
   return (
-    // <Container className={styles.contactForm}>
     <>
       <Row className={`${styles.fullWidthBackground} justify-content-center`}>
         <Col md={8} className={`${styles.fullWidthText} text-center`}>
@@ -31,14 +30,14 @@ const ContactForm = () => {
                 <FontAwesomeIcon icon={faPhoneAlt} size="2x" className={styles.icon} />
               </div>
               <p className={styles.infoTitle}>Contact Info</p>
-              <p>Open a chat or give us a call at <a href="tel:+201028495576">+20 1028495576</a></p>
+              <p>Open a chat or give us a call at <a href="tel:+201022616726">+20 1022616726</a></p>
             </div>
             <div className={styles.infoItem}>
               <div className={styles.iconWrapper}>
                 <FontAwesomeIcon icon={faEnvelope} size="2x" className={styles.icon} />
               </div>
               <p className={styles.infoTitle}>Our Email</p>
-              <p>www.wazzafny.com</p>
+              <p>careers00111@gmail.com</p>
             </div>
           </div>
         </Col>
@@ -88,13 +87,12 @@ const ContactForm = () => {
               </Form.Label>
               <Form.Control as="textarea" id="formMessage" rows={3} className={`mb-4 form-control ${styles.formControl}`} />
             </Form.Group>
-            <Button className="btn btn-success w-100 m-auto mb-3 mt-3 d-flex align-items-center justify-content-center">
+            <Button className="btn btn-success w-100 m-auto mb-3 mt-3 d-flex align-items-center justify-content-center" onClick={()=> toast.success("Message Sent Successfully, we will contact you soon")}>
               Send Message
             </Button>
           </Form>
         </Col>
       </Row>
-    {/* </Container> */}
     </>
   );
 }

@@ -32,7 +32,7 @@ export const applyForJob = createAsyncThunk(
       const response = await axiosInstance.post('/appliedJobs', {
         userId, jobId, FirstAnswer, SecondAnswer, thirdAnswer, FourthAnswer
       });
-      console.log('Response:', response.data);
+       ('Response:', response.data);
       return response.data.data._id;
     } catch (error) {
       if (error.response) {

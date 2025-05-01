@@ -20,13 +20,11 @@ const CompanyCard = ({ company }) => {
   }, [dispatch, company._id]);
 
   useEffect(() => {
-    console.log('Jobs data in component:', Jobs); // تحقق من البيانات هنا
     if (Jobs) {
       setJobs(Jobs);
     }
   }, [Jobs]);
 
-  console.log(company, 'this compo', jobs, company._id);
 
   return (
     <div className={`${styles.jobSeekerContainer} d-flex justify-content-center align-items-center flex-column m-0`}>
@@ -52,11 +50,7 @@ const CompanyCard = ({ company }) => {
             </span>
           </div>
           <hr className={styles.separator} />
-          <div className={styles.skillsContainer}>
-            <div className="d-flex justify-content-start m-2 align-items-center flex-wrap">
-              {/* يمكن إضافة المهارات هنا */}
-            </div>
-          </div>
+          
           <button
             className={`btn ${styles.viewProfileButton} mt-auto`}
             onClick={handleViewProfile}

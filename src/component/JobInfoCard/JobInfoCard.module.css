@@ -1,7 +1,7 @@
 .Container {
   text-align: center;
-  border-radius: 0.5rem; /* 8px */
-  padding: 0.125rem; /* 2px */
+  border-radius: 0.5rem; 
+  padding: 0.125rem; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,7 +11,7 @@
 
 .Text {
   font-size: 0.8rem; 
-  margin-left: 4px !important; /* 20px */
+  margin-left: 4px !important; 
   color: var(--Paragraph02);
 }
 @media only screen and (max-width: 600px){

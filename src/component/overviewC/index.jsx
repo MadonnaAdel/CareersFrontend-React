@@ -9,7 +9,6 @@ const Overview = () => {
   const user = useSelector((state) => state.users.user);
   const loading = useSelector((state) => state.users.loading);
   const error = useSelector((state) => state.users.error);
-  console.log('user',user);
 
 
   if (loading) return <div>Loading...</div>;
@@ -18,11 +17,11 @@ const Overview = () => {
 
   return (
 <div className='position-static'>
-  <div class="form-group position-relative">
-    <span class={`position-absolute bg-white ${styles.inputLabel}`}>
+  <div className="form-group position-relative">
+    <span className={`bg-white ${styles.inputLabel}`}>
       Overview
     </span>
-    <div class="col-sm-11">
+    <div className="col-sm-11">
           <div className={`${styles.jobSeekerInput} ${styles.inputField}`} >
             {user?.overview}
           </div>

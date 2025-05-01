@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axiosInstance from "../../axioseConfig/instance";
 
-// Define the initial state
 const initialState = {
   companies: [],
   company: null,
@@ -12,7 +11,6 @@ const initialState = {
   error: null
 };
 
-// Create the asynchronous thunks
 export const getAllCompanies = createAsyncThunk(
   'companies/getAllCompanies',
   async () => {
@@ -93,7 +91,6 @@ export const deleteCompanyData = createAsyncThunk(
   }
 );
 
-// Create the slice
 const companiesSlice = createSlice({
   name: 'companies',
   initialState,
@@ -205,5 +202,4 @@ const companiesSlice = createSlice({
   },
 });
 
-// Export the reducer
 export default companiesSlice.reducer;

@@ -11,17 +11,14 @@ export default function JobTrackingCircleChart() {
   const userId = localStorage.getItem('userId');
 
   useEffect(() => {
-    // Fetch the applied jobs when the component mounts
     dispatch(fetchAppliedJobsByJobSeeker({ userId }));
   }, [dispatch, userId]);
 
-  // Process the applied jobs data to count the number of jobs in each status category
   const chartData = useMemo(() => {
-    // Initialize an object to hold the count of each status
-    const statusCounts = appliedJobs.reduce((acc, job) => {
-      const status = job.appliedJobStatus; // Get the job status
+    if (!Array.isArray(appliedJobs)) return [];
+    const statusCounts = appliedJobs?.reduce((acc, job) => {
+      const status = job.appliedJobStatus; 
       if (status) {
-        // Increment the count for this status
         if (acc[status]) {
           acc[status]++;
         } else {
@@ -31,10 +28,8 @@ export default function JobTrackingCircleChart() {
       return acc;
     }, {});
 
-    // Calculate total jobs
     const totalJobs = appliedJobs.length;
 
-    // Convert the statusCounts object into an array of { label, value, percentage } objects with colors
     const statusColors = {
       pending: "#96E3B9",
       accepted: "#01A84D",

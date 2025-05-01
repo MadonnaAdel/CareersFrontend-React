@@ -25,7 +25,7 @@ const SkillsList = ({ userId }) => {
   return (
    <div>
   <div className="form-group mb-4 position-relative">
-    <label className={`position-absolute bg-white ${styles.inputLabel}`} style={{ top: '-10px', left: '15px' }}>
+    <label className={` bg-white ${styles.inputLabel}`} style={{ top: '-10px', left: '15px' }}>
       Skills
     </label>
     <div className="col-sm-11">

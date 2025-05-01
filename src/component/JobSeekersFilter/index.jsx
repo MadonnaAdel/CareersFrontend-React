@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,8 +9,9 @@ const JobSeekersFilter = ({ candidates, onFilter }) => {
   const [selectedQualifications, setSelectedQualifications] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState("");
 
-  const updateFilter = (prevSelected, value) =>prevSelected.includes(value)
-? prevSelected.filter((v) => v !== value)
+  const updateFilter = (prevSelected, value) =>
+    prevSelected.includes(value)
+      ? prevSelected.filter((v) => v !== value)
       : [...prevSelected, value];
 
   const handleFilterChange = (filterType, value) => {
@@ -72,8 +72,6 @@ const JobSeekersFilter = ({ candidates, onFilter }) => {
     candidates,
   ]);
 
-
-
   return (
     <div
       className="p-3"
@@ -81,12 +79,11 @@ const JobSeekersFilter = ({ candidates, onFilter }) => {
         backgroundColor: "#FAFCF8",
         borderRadius: "10px",
         width: "100%",
-      
+
         border: "1px solid #B4E0D3",
       }}
     >
       <Form>
-
         <Form.Group className="mb-3">
           <Form.Label>City</Form.Label>
           <Form.Select
@@ -131,7 +128,6 @@ const JobSeekersFilter = ({ candidates, onFilter }) => {
           </Form.Select>
         </Form.Group>
         <hr />
-        {/* Category Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Category</Form.Label>
           {["Programming", "Health Care", "Finance", "Accounting"].map(
@@ -146,7 +142,6 @@ const JobSeekersFilter = ({ candidates, onFilter }) => {
           )}
         </Form.Group>
         <hr />
-        {/* Experience Level Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Experience Level</Form.Label>
           {["Fresh", "Junior", "Senior", "Expert"].map((level) => (
@@ -159,7 +154,6 @@ const JobSeekersFilter = ({ candidates, onFilter }) => {
           ))}
         </Form.Group>
         <hr />
-        {/* Job Type Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Desired Job Type</Form.Label>
           {["Full Time", "Part Time", "Internship", "Freelance"].map(
@@ -174,7 +168,6 @@ const JobSeekersFilter = ({ candidates, onFilter }) => {
           )}
         </Form.Group>
         <hr />
-        {/* Qualifications Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Qualifications</Form.Label>
           {["Master’s Degree", "Bachelors Degree", "None"].map(
@@ -190,7 +183,6 @@ const JobSeekersFilter = ({ candidates, onFilter }) => {
             )
           )}
         </Form.Group>
-       
       </Form>
     </div>
   );

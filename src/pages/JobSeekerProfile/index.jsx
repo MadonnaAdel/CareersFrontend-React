@@ -13,7 +13,7 @@ import noData from '../../assets/images/NoData.svg'
 const JobSeekerProfile = () => {
   const user = useSelector((state)=>state.users.user)
   const {userId} = useParams();
-  console.log(user);
+   (user);
   return (
     <>
       <div>

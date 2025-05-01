@@ -1,11 +1,9 @@
 
-// import React from 'react';
 import styles from './style.module.css';
 import classNames from 'classnames';
 import Form from 'react-bootstrap/Form';
 import PrimaryButton from '../../component/primaryButton';
 import SecondaryButton from '../../component/SecondayButton';
-// import {faChartLine, faUser, faPenToSquare, faBriefcase, faNewspaper, faBookmark, faGear, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 
 

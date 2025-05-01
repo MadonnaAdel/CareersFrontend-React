@@ -26,10 +26,10 @@ export default function Login() {
 
   const signIn = async (values) => {
     try {
-      const isUserFind = allUsers.find((user) => user.email === values.email);
-      if (!isUserFind) {
-        toast.error("Email Not Found");
-      } else {
+      // const isUserFind = allUsers.find((user) => user.email === values.email);
+      // if (!isUserFind) {
+        // toast.error("Email Not Found");
+      // } else {
         const res = await dispatch(loginUser(values));
         if (res.payload && res.payload.token) {
           login(res.payload.token, res.payload.user);
@@ -37,7 +37,7 @@ export default function Login() {
         } else {
           toast.error("The Email or password is incorrect. Please try again.");
         }
-      }
+      // }
     } catch (error) {
       toast.error("An error occurred. Please try again.");
       console.error("Error during sign-in process:", error);
@@ -56,14 +56,14 @@ export default function Login() {
         if (res.payload && res.payload.token) {
           login(res.payload.token, res.payload.user);
           navigate("/home");
-            console.log(res);
+             (res);
         } else {
           toast.error("Login failed. Please check your credentials.");
-          console.log(res);
+           (res);
         }
       }
     } catch (error) {
-      console.log(error);
+       (error);
       toast.error("An error occurred during Google login. Please try again.");
     }
   };
@@ -88,9 +88,9 @@ export default function Login() {
   });
 
   return (
-    <section className={styles.register}>
+    <section className={styles.login}>
       <div className={`container ${styles.loginConain}`}>
-        <div className={`row ${styles.registerForm}`}>
+        <div className={`row ${styles.loginForm}`}>
           <div className={`${styles.sectionLeft} col-7 p-4`}>
             <div className={styles.loginSec}>
               <div className="leftTitle text-center my-5">

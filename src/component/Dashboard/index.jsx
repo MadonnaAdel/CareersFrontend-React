@@ -37,8 +37,7 @@ export default function Dashboard() {
 
     const fetchAppliedJobsLength = async () => {
       const { payload } = await dispatch(countAppliedJobsByUser({ userId }));
-      setAppliedJobsCount(payload); // Set the state with the fetched payload
-      console.log();
+      setAppliedJobsCount(payload);
     };
 
     fetchAppliedJobsLength();
@@ -46,7 +45,7 @@ export default function Dashboard() {
 
     const fetchSavedJobsLength = async () => {
       const { payload } = await dispatch(countSavedJobsByUser({ userId }));
-      setSavedJobsCount(payload); // Set the state with the fetched payload
+      setSavedJobsCount(payload);
     };
 
     fetchSavedJobsLength();
@@ -66,7 +65,7 @@ export default function Dashboard() {
 
 
 
-  const iconSize = isSmallScreen ? 50 : 70; // Set icon size based on screen width
+  const iconSize = isSmallScreen ? 50 : 70; 
 
   if (!jobs) return <p>Loading...</p>;
   if (!appliedJobs) return <p>Loading...</p>;

@@ -44,7 +44,6 @@
   min-width: 100px;
 }
 
-/*  */
 .companyImg {
   width: 150px;
   height: 150px;
@@ -56,7 +55,7 @@
 
 .btns {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 30px;
 }
 

@@ -20,7 +20,6 @@
   }
   .accordion-content {
     padding: 15px;
-    /* background:var(--background); */
     color: var(--Paragraph02);
   }
   .accordion-content:hover {

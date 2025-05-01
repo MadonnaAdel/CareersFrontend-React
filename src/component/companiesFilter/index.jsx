@@ -54,7 +54,6 @@ const CompaniesFilter = ({ company, onFilter }) => {
         selectedQualifications.includes(candidate.qualifications);
       const matchesLocation =
         selectedLocation === "" || selectedLocation === candidate.city;
-  // console.log(candidates)
 
       return (
         matchesCategory &&
@@ -133,7 +132,6 @@ const CompaniesFilter = ({ company, onFilter }) => {
           </Form.Select>
         </Form.Group>
         <hr />
-        {/* Category Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Category</Form.Label>
           {["Programming", "Health Care", "Finance", "Accounting"].map(
@@ -148,7 +146,6 @@ const CompaniesFilter = ({ company, onFilter }) => {
           )}
         </Form.Group>
         <hr />
-        {/* Experience Level Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Experience Level</Form.Label>
           {["Fresh", "Junior", "Senior", "Expert"].map((level) => (
@@ -161,7 +158,6 @@ const CompaniesFilter = ({ company, onFilter }) => {
           ))}
         </Form.Group>
         <hr />
-        {/* Job Type Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Desired Job Type</Form.Label>
           {["Full Time", "Part Time", "Internship", "Freelance"].map(
@@ -176,7 +172,6 @@ const CompaniesFilter = ({ company, onFilter }) => {
           )}
         </Form.Group>
         <hr />
-        {/* Qualifications Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Qualifications</Form.Label>
           {["Master’s Degree", "Bachelors Degree", "None"].map(

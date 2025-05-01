@@ -45,12 +45,10 @@ const SendEmailToForgetPassword = () => {
     }
     try {
       await dispatch(requestOTP({ email })).unwrap();
-      // setMessage("Code has been sent to your email");
       toast.info("Code has been sent to your email");
       setShowOTPInput(true);
     } catch (err) {
       console.error("Failed to request OTP:", err);
-      // setMessage("Failed to request code");
       toast.error("Failed to request code");
     }
   };
@@ -58,18 +56,15 @@ const SendEmailToForgetPassword = () => {
   const handleVerifyOTP = async (e) => {
     e.preventDefault();
     if (!validateOTP(OTP)) {
-      // setMessage("Invalid OTP format");
        toast.error("Invalid OTP format");
       return;
     }
     try {
       await dispatch(verifyOTP({ otp: OTP, email })).unwrap();
-      // setMessage("OTP verified successfully");
        toast.success("OTP verified successfully");
       setShowNewPasswordInput(true);
     } catch (err) {
       console.error("Failed to verify OTP:", err);
-      // setMessage("Failed to verify OTP: " + err.message);
        toast.error("Failed to verify OT" + err.message);
     }
   };
@@ -82,12 +77,10 @@ const SendEmailToForgetPassword = () => {
     }
     try {
       await dispatch(resetPassword({ email, newPassword })).unwrap();
-      // setMessage("Password reset successful");
        toast.success("Password reset successful");
       navigate("/login");
     } catch (err) {
       console.error("Failed to reset password:", err);
-      // setMessage("Failed to reset password");
        toast.error("Failed to reset password");
     }
   };

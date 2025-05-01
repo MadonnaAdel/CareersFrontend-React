@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Modal, Button } from "react-bootstrap";
 import "font-awesome/css/font-awesome.min.css"; 
 
-const PopUp = ({ show, handleClose, img, body }) => {
+const PopUp = ({ show, handleClose, img, body =null}) => {
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton></Modal.Header>
@@ -22,10 +22,6 @@ PopUp.propTypes = {
   show: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
   body: PropTypes.node,
-};
-
-PopUp.defaultProps = {
-  body: null,
 };
 
 export default PopUp;

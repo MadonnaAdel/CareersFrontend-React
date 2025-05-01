@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Nav, Navbar, Modal, Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Nav, Navbar, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from "./Sidebar.module.css";
 import {
@@ -36,40 +36,38 @@ const JobSeekerSidebar = ({ activee }) => {
         <Nav className={`flex-column mt-4 w-100 ${styles.dashboardContainer}`}>
 
           <div
-            className={`d-flex align-items-center ${styles.element} ${
-              activeItem === "dashboard" ? styles.active : ""
-            }`}
+            className={`d-flex align-items-center ${styles.element} ${activeItem === "dashboard" ? styles.active : ""
+              }`}
             onClick={() => handleItemClick("dashboard", "dashboard-info")}
           >
             {activeItem === "dashboard" && (
               <span className={styles.activeFlag}></span>
             )}
-             <span className={ `${styles.icon}`} >
+            <span className={`${styles.icon}`} >
               <UilTachometerFastAlt />
-              </span>
-                 <span className={`${styles.title}`}>
+            </span>
+            <span className={`${styles.title} text-nowrap`}>
               Dashboard
-              
-              </span>
+
+            </span>
           </div>
 
           <div
-            className={`d-flex align-items-center ${styles.element} ${
-              activeItem === "profile" ? styles.active : ""
-            }`}
+            className={`d-flex align-items-center ${styles.element} ${activeItem === "profile" ? styles.active : ""
+              }`}
             onClick={() => handleItemClick("profile", "my-Profile")}
           >
             {activeItem === "profile" && (
               <span className={styles.activeFlag}></span>
             )}
-             <span className={ `${styles.icon}`} >
+            <span className={`${styles.icon}`} >
               <UilUser />
             </span>
-             <span className={`${styles.title}`}>
+            <span className={`${styles.title} text-nowrap`}>
               My Profile
-              </span>
+            </span>
           </div>
-          <div
+          {/* <div
             className={`d-flex align-items-center ${styles.element} ${
               activeItem === "manage-cv" ? styles.active : ""
             }`}
@@ -81,79 +79,75 @@ const JobSeekerSidebar = ({ activee }) => {
              <span className={ `${styles.icon}`} >
               <UilFileLandscape />
               </span>
-             <span className={`${styles.title}`}>
+             <span className={`${styles.title} text-nowrap`}>
             Manage CV
 
             </span>
-          </div>
-          
+          </div> */}
+
           <div
-            className={`d-flex align-items-center ${styles.element} ${
-              activeItem === "applied-jobs" ? styles.active : ""
-            }`}
+            className={`d-flex align-items-center ${styles.element} ${activeItem === "applied-jobs" ? styles.active : ""
+              }`}
             onClick={() => handleItemClick("applied-jobs", "applied-jobs")}
           >
             {activeItem === "applied-jobs" && (
               <span className={`${styles.activeFlag}  d-none d-sm-block `}></span>
             )}
-              <span className={ `${styles.icon}`} >
+            <span className={`${styles.icon}`} >
               <UilFileCheckAlt />
             </span>
-            <span className={`${styles.title}`}>
-            Applied Jobs
+            <span className={`${styles.title} text-nowrap`}>
+              Applied Jobs
 
             </span>
-            
+
           </div>
           <div
-            className={`d-flex align-items-center ${styles.element} ${
-              activeItem === "saved-jobs" ? styles.active : ""
-            }`}
+            className={`d-flex align-items-center ${styles.element} ${activeItem === "saved-jobs" ? styles.active : ""
+              }`}
             onClick={() => handleItemClick("saved-jobs", "saved-Jobs")}
           >
             {activeItem === "saved-jobs" && (
               <span className={styles.activeFlag}></span>
             )}
-            
-            <span className={ `${styles.icon}`} >
-            <UilBookmark />
+
+            <span className={`${styles.icon}`} >
+              <UilBookmark />
 
             </span>
-             <span className={`${styles.title}`}>
+            <span className={`${styles.title} text-nowrap`}>
               Saved Jobs
-              </span>
+            </span>
           </div>
           <div
-            className={`d-flex align-items-center ${styles.element} ${
-              activeItem === "setting" ? styles.active : ""
-            }`}
+            className={`d-flex align-items-center ${styles.element} ${activeItem === "setting" ? styles.active : ""
+              }`}
             onClick={() => handleItemClick("setting", "settings")}
           >
             {activeItem === "setting" && (
               <span className={styles.activeFlag}></span>
             )}
-             <span className={ `${styles.icon}`} >
+            <span className={`${styles.icon}`} >
               <UilCog />
             </span>
-             <span className={`${styles.title}`}>
+            <span className={`${styles.title} text-nowrap`}>
               Settings
-              </span>
+            </span>
           </div>
           <div
-            className={`d-flex align-items-center ${styles.element} ${
-              activeItem === "log-out" ? styles.active : ""
-            }`}
+            className={`d-flex align-items-center text-danger ${styles.element} ${activeItem === "log-out" ? styles.active : ""
+              }`}
             onClick={handleShow}
           >
             {activeItem === "log-out" && (
               <span className={styles.activeFlag}></span>
             )}
- <span className={ `${styles.icon}`} >
+            <span className={`${styles.icon}`} >
               <UilSignout />
             </span>
-             <span className={`${styles.title}`}>
+            <span className={`${styles.title} text-nowrap `}>
               Log Out
-              </span>
+            </span>
           </div>
         </Nav>
       </Navbar>
@@ -162,7 +156,7 @@ const JobSeekerSidebar = ({ activee }) => {
         handleClose={handleClose}
         body={
           <>
-              <img src={imge} alt="" width="60%" height="60%"/>
+            <img src={imge} alt="" width="60%" height="60%" />
             <div>You will log out. Are you sure?</div>
             <div className="d-flex justify-content-center align-items-center my-4">
               <Button
@@ -184,35 +178,10 @@ const JobSeekerSidebar = ({ activee }) => {
             </div>
           </>
         }
-     
+
       />
     </>
   );
 };
 
 export default JobSeekerSidebar;
-  // <Modal show={show} onHide={handleClose}>
-  //       <Modal.Header closeButton>
-  //         <Modal.Title>Confirm Logout</Modal.Title>
-  //       </Modal.Header>
-  //       <Modal.Body className="text-center">
-  //         Are you sure you want to log out?
-  //         <div className="my-3 d-flex justify-content-center align-items-center">
-  //           <Button
-  //             className="btn btn-outline-success bg-white text-success me-3"
-  //             onClick={handleClose}
-  //           >
-  //             No
-  //           </Button>
-  //           <Button
-  //             className="btn btn-success"
-  //             onClick={() => {
-  //               logout();
-  //               navigate("/Home");
-  //             }}
-  //           >
-  //             Yes
-  //           </Button>
-  //         </div>
-  //       </Modal.Body>
-  //     </Modal>

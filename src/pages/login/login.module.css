@@ -1,7 +1,5 @@
 
-
-
-.register {
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +7,7 @@
     position: relative;
 }
 
-.registerForm {
+.loginForm {
     border: 1px solid var(--secondary);
     border-radius: 12.43px;
 }
@@ -48,7 +46,7 @@
 
 @media (max-width: 769px) {
 
-    .registerForm {
+    .loginForm {
         width: 95%;
         flex-direction: column;
         align-items: center;

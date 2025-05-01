@@ -30,7 +30,10 @@ const JobSeekerCard = ({ candidate }) => {
           >
             <img
               className={styles.circularImage}
-              src={candidate.profilePhoto ||  "../../assets/images/userAvtar.svg"}
+              src={candidate?.profilePhoto }
+              onError={(e) => {
+                e.target.src = "../../User Interface/profileAvatar.png"; 
+              }}
               alt="Profile Avatar"
               width='100%'
               height='100%'

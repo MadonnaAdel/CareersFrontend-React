@@ -59,7 +59,6 @@ const Candidates = () => {
       setCurrentPage(pageNumber);
     }
   };
-  console.log(candidates);
 
   return (
     <>
@@ -113,7 +112,7 @@ const Candidates = () => {
           </Col>
           <Col md={9}>
             <Row>
-              <p>All {filteredCandidates.length} candidates found</p>
+              <p> {filteredCandidates.length} candidates found</p>
               {loading ? (
                 <Row>
                   {[...Array(6)].map((_, index) => (
@@ -122,8 +121,8 @@ const Candidates = () => {
                       className={`d-flex align-items-center justify-content-center ${index % 3 === 1 ? 'mx-5' : ''}`}
                       md={4}
                     >
-                          <div class={styles.wrapper}>
-                            <div class={styles.circle}></div>
+                          <div className={styles.wrapper}>
+                            <div className={styles.circle}></div>
                             <div className={styles.line1}></div>
                             <div className={styles.line2}></div>
                             <div className={styles.line3}></div>

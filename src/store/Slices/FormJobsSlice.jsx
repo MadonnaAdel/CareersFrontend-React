@@ -1,13 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from './../../axioseConfig/instance';
 
-// Define asynchronous thunk actions
 export const getAllFormJobs = createAsyncThunk('jobForm/getAllFormJobs', async () => {
   const res = await axiosInstance.get('/additionalQuestions');
   return res.data;
 });
 
-// Get form by job ID
 export const getFormByJobId = createAsyncThunk('jobForm/getFormByJobId', async (id) => {
   const res = await axiosInstance.get(`/additionalQuestions/${id}`);
   return res.data;
@@ -28,7 +26,6 @@ export const deleteForm = createAsyncThunk('jobForm/deleteForm', async (id) => {
   return res.data;
 });
 
-// Create a slice for jobForm
 const formSlice = createSlice({
   name: 'jobForm',
   initialState: {
@@ -40,7 +37,6 @@ const formSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Handle getAllFormJobs
       .addCase(getAllFormJobs.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -53,7 +49,6 @@ const formSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       })
-      // Handle getFormByJobId
       .addCase(getFormByJobId.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -66,7 +61,6 @@ const formSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       })
-      // Handle postForm
       .addCase(postForm.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -79,7 +73,6 @@ const formSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       })
-      // Handle updateForm
       .addCase(updateForm.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -95,7 +88,6 @@ const formSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       })
-      // Handle deleteForm
       .addCase(deleteForm.pending, (state) => {
         state.loading = true;
         state.error = null;

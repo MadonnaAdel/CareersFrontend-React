@@ -6,7 +6,6 @@
 .row {
   margin-left: 1rem;
   margin-right: 1rem;
-  /* gap: 18px; */
 }
 
 .imageCol {
@@ -15,10 +14,7 @@
   justify-content: center;
 }
 
-/* .image {
-  width: 100%;
-  border-radius: 8px;
-} */
+
 
 .header {
   font-size: 2.5rem;

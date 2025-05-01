@@ -104,7 +104,6 @@ export default function JobsFilter({ jobs, onFilter }) {
           </Form.Select>
         </Form.Group>
         <hr />
-        {/* Category Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Category</Form.Label>
           {["Programming", "Health Care", "Finance", "Accounting"].map((jobCategory) => (
@@ -117,7 +116,6 @@ export default function JobsFilter({ jobs, onFilter }) {
           ))}
         </Form.Group>
         <hr />
-        {/* Experience Level Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Experience Level</Form.Label>
           {["Fresh", "Junior", "Senior", "Expert", "MidLevel"].map((level) => (
@@ -130,7 +128,6 @@ export default function JobsFilter({ jobs, onFilter }) {
           ))}
         </Form.Group>
         <hr />
-        {/* Job Type Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Job Type</Form.Label>
           {["Full-Time", "Part-Time", "Internship", "Freelance"].map((jobType) => (
@@ -143,7 +140,6 @@ export default function JobsFilter({ jobs, onFilter }) {
           ))}
         </Form.Group>
         <hr />
-        {/* Salary Range Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Salary Range: {`${salaryRange[0]} - ${salaryRange[1]}`}</Form.Label>
           <Slider
@@ -155,7 +151,6 @@ export default function JobsFilter({ jobs, onFilter }) {
           />
         </Form.Group>
         <hr />
-        {/* Job Location Type Filter */}
         <Form.Group className="mb-3">
           <Form.Label>Job Location Type</Form.Label>
           {["OnSite", "Remote", "Hybrid"].map((jobLocationType) => (

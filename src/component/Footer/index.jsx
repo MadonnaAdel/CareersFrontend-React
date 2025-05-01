@@ -1,4 +1,3 @@
-//import React from 'react';
 import styles from "./footer.module.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/careers-logo.png";

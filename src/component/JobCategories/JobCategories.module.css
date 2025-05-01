@@ -42,9 +42,6 @@
   border: 2px solid #28a745;
 }
 
-/* .highlight {
-  border: 2px solid #28a745;
-} */
 
 .categoryIcon {
   font-size: 40px;
@@ -71,7 +68,6 @@
   margin-top: 20px;
 }
 
-/* Media Queries for responsiveness */
 @media (max-width: 992px) {
   .categoryCard {
     flex: 1 1 calc(45% - 20px);

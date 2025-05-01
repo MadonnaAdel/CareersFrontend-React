@@ -1,10 +1,10 @@
 import axios from 'axios';
+import { t } from 'i18next';
 const axiosInstance = axios.create({
-   baseURL: "https://deploying-backend-taupe.vercel.app/",
+   baseURL: "https://careers-api-six.vercel.app/",
 //  baseURL: "http://localhost:3001",
 headers: {
   'Content-Type': 'application/json',
-    //'Job-Id': jobId
 },
 });
 
@@ -12,23 +12,19 @@ headers: {
 
 
 axiosInstance.interceptors.request.use(config => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");    
   if (token) {
-    config.headers.Authorization = ` ${token}`;
+    config.headers.Authorization = `Bearer ${token}`;
   }
-  // console.log('Request sent:', config);
   return config;
 }, error => {
-  // console.error('Request error:', error);
   return Promise.reject(error);
 });
 
 
 axiosInstance.interceptors.response.use(response => {
-  // console.log('Response received:', response);
   return response;
 }, error => {
-  // console.error('Response error:', error);
   return Promise.reject(error);
 });
 

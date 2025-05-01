@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useLocation hook
+import { Link, useLocation, useNavigate } from 'react-router-dom'; 
 import { UilBookmark } from '@iconscout/react-unicons';
 import { UisBookmark } from '@iconscout/react-unicons-solid';
 import { useDispatch, useSelector } from 'react-redux';
 import { postSavedJob, deleteSavedJob, getSavedJobs } from '../../store/Slices/savedJobsSlice';
 import JobInfoCard from '../JobInfoCard';
 import styles from './JobCard.module.css';
-import { format, formatDistanceToNow } from 'date-fns';
 import moment from 'moment';
+import { Image } from 'react-bootstrap';
 
 
 const JobCard = ({ job, id, onRemove }) => {
   const dispatch = useDispatch();
-  const userId = '6681e2ab75a50c5ecc4d8e02';
+  const userId = localStorage.getItem('userId');
   const savedJobs = useSelector((state) => state.savedJobs.savedJobs);
   const [isFav, setIsFav] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation(); 
+  const location = useLocation();
 
   useEffect(() => {
     if (job && savedJobs.some((savedJob) => savedJob.jobId && savedJob.jobId._id === job._id)) {
@@ -34,7 +34,6 @@ const JobCard = ({ job, id, onRemove }) => {
         .then(() => {
           dispatch(getSavedJobs(userId)).then(() => {
             setIsFav(false);
-            onRemove(jobId);
           });
         })
         .catch((error) => {
@@ -54,6 +53,7 @@ const JobCard = ({ job, id, onRemove }) => {
     }
   };
 
+
   const truncateDescription = (description, maxLength) => {
     if (description.length <= maxLength) {
       return description;
@@ -61,37 +61,36 @@ const JobCard = ({ job, id, onRemove }) => {
     return description.slice(0, maxLength) + '...';
   };
 
-  const formatJobTimestamp = (timestamp) => {
-    return formatDistanceToNow(new Date(timestamp), { addSuffix: true });
-  };
+
   if (!job) return null;
 
   const jobLocation = job.jobLocation || {};
 
-  // Condition to hide image based on path
-  const shouldHideImage = location.pathname === '/savedjobs';
 
   return (
     <div className={`d-flex align-items-center ${styles.container}`}>
       <div className={styles.detailsContainer}>
+      <Link to={`/JobsDetails/${job._id}`} className={styles.titleLink}>
+
         <div className={`d-flex align-items-center ${styles.padding2}`}>
-          {!shouldHideImage && (
-            <img
-              src={job.companyId.companyLogo}
-              alt="Employer Logo"
-              className={styles.imgSize}
-            />
-          )}
+        
+        {job?.companyId?.companyLogo &&
+  <img
+    src={job.companyId.companyLogo}
+    alt="Employer Logo"
+    onError={(e) => (e.target.src = '/images/companyLogo.png')}
+    className={styles.imgSize}
+  />
+  
+}
+
+         
           <div className={`d-flex flex-column ${styles.marginLeft}`}>
-            <Link to={`/JobsDetails/${job._id}`} className={styles.titleLink}>
               <h5 className={`m-0 ${styles.title}`}>{job.JobTitle}</h5>
-            </Link>
-            <Link to="/company-profile " className='my-1'>{job?.companyId?.companyName }</Link>
+            <Link to="/company-profile " className='my-1'>{job?.companyId?.companyName}</Link>
             <div className="d-flex">
               <img src="/clock.svg" alt="Clock Icon" />
               <p className={`m-0 ${styles.subtext}`}>
-                {/* {formatJobTimestamp(job.timeStamp)}
-                 */}
                 {moment(job.timeStamp).fromNow()}
               </p>
             </div>
@@ -117,16 +116,20 @@ const JobCard = ({ job, id, onRemove }) => {
         <p className={styles.jobDescription}>
           {truncateDescription(job.description, 100)}
         </p>
-      </div>
+        </Link>
+        </div>
       <div className={styles.container2}>
         {isFav ? (
           <UisBookmark onClick={() => handleFavIcon(job._id)} />
         ) : (
           <UilBookmark onClick={() => handleFavIcon(job._id)} />
         )}
+
+
+
         <button
           className={`${styles.button} btn btn-success`}
-          onClick={() => navigate(`/JobsDetails/${job._id}`)} // Navigate to details page
+          onClick={() => navigate(`/JobsDetails/${job._id}`)} 
         >
           Details
         </button>

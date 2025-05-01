@@ -85,7 +85,6 @@
   padding: 5px 16px;
  
 }
- /* @media ipad */
     
 @media screen  and (max-width:992px){
  .logo{
@@ -99,7 +98,6 @@
 
 
 
-/* @media mobile */  
  @media screen and (max-width: 768px) {
   .container {
       padding-left: 25px;

@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
 import { GrFormSearch } from "react-icons/gr";
 import styles from './style.module.css';
 import Horizontal from '../../component/RangeSlider';
@@ -8,7 +6,6 @@ import JobCard from '../../component/JobCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllJobs } from '../../store/Slices/FetchJobsSlice';
 import {DebounceInput} from 'react-debounce-input';
-import ReactDOM from 'react-dom';
 const BrowseJobs = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [filteredJobs, setFilteredJobs] = useState([]);
@@ -291,9 +288,7 @@ const BrowseJobs = () => {
                                     JobType={job.JobType}
                                     description={job.description}
                                     JobHours={job.JobHours}
-                                    // JoblocationType={job.JoblocationType}
                                     jobLevel={job.jobLevel}
-                                    // jobLocation={job.jobLocation}
                                     jobRequirements={job.jobRequirements}
                                     skills={job.skills}
                                     timeStamp={job.timeStamp}
