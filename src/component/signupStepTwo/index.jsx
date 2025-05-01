@@ -414,7 +414,7 @@ export default function SignUpStepTwo() {
             <p className="d-flex ">
               Already have an account?
               <NavLink
-                to="/signin"
+                to="/login"
                 className="text-success text-decoration-none"
               >
                 <span>Sign in</span>

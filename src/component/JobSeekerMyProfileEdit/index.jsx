@@ -319,12 +319,9 @@ const JobSeekerMyProfileEdit = () => {
                 }
               >
                 <option>Junior</option>
-                <option>Intern</option>
-                <option>Mid-Level</option>
+                <option>Mid Level</option>
                 <option>Senior</option>
-                <option>Manager</option>
-                <option>Director</option>
-                <option>C-Level</option>
+                <option>Fresh</option>
                 <option>Expert</option>
               </Form.Control>
             </Col>
