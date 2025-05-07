@@ -33,7 +33,7 @@
   display: block;
 }
 .glassy {
-  background: no-repeat center url("/public/back.svg");
+  background: no-repeat center url("/back.svg");
   background-size: cover;
   text-align: center;
   padding: 60px;

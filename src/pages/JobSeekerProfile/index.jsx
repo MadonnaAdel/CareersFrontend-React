@@ -13,7 +13,6 @@ import noData from '../../assets/images/NoData.svg'
 const JobSeekerProfile = () => {
   const user = useSelector((state)=>state.users.user)
   const {userId} = useParams();
-   (user);
   return (
     <>
       <div>
@@ -29,10 +28,7 @@ const JobSeekerProfile = () => {
               user?.education &&  user?.overview ? (
                 <>
                   <Overview />
-            <Education name={'Education'} title={user?.education[0]?.title} academy={ user?.education[0]?.academy} description={user?.education[0]?.description}
-            from={user?.education[0]?.from}   to ={user?.education[0]?.to} />
-             <Education name={'Work & Experience'} title={user?.workAndExperience[0]?.title} academy={ user?.workAndExperience[0]?.academy} description={user?.workAndExperience[0]?.description}
-            from={user?.workAndExperience[0]?.from}   to ={user?.workAndExperience[0]?.to} />
+          
             <SkillsList />
                 </>
               ) : (

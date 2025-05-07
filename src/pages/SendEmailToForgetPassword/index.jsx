@@ -88,7 +88,7 @@ const SendEmailToForgetPassword = () => {
   return (
     <section className={styles.register}>
       <div className={`container ${styles.loginConain}`}>
-        <div className={`row ${styles.registerForm}`}>
+        <div className={`row ${styles.registerForm} m-auto`}>
           <div className={`${styles.sectionLeft} col-7 p-4`}>
             <div className={styles.loginSec}>
               <div className="text-center">

@@ -99,7 +99,7 @@ const JobsDetails = () => {
       await dispatch(getJobById(id));
       const res = await dispatch(fetchAppliedJobsByJobSeeker({ userId }));
       res.payload.forEach((appliedJob) => {
-        if (appliedJob.jobId._id === id && appliedJob.userId === userId) {
+        if (appliedJob?.jobId?._id === id && appliedJob?.userId === userId) {
           setIsApplied(true);
           setAppliedJobId(appliedJob._id);
         }
@@ -110,7 +110,7 @@ const JobsDetails = () => {
 
   const handleApplyNow = async (jobId) => {
     const existingApplication = appliedJobs.find(
-      (appliedJob) => appliedJob.jobId._id == id && appliedJob.userId == userId
+      (appliedJob) => appliedJob?.jobId?._id == id && appliedJob?.userId == userId
     );
 
     if (existingApplication) {
@@ -180,12 +180,9 @@ const JobsDetails = () => {
               </div>
               <div className={styles.content}>
                 <h5 className={styles.jobTitle}>{job?.JobTitle}</h5>
-                <Link
-                  to={`/company-profile/${job?.companyId?._id}`}
-                  className="my-2"
-                >
+                <p className="my-2 text-success">
                   {job?.companyId?.companyName}
-                </Link>
+                </p>
                 <div className={`d-flex`}>
                   <img src="/clock.svg" alt="Clock Icon" />
                   <p className={`m-0 ${styles.subtext}`}>
@@ -367,14 +364,11 @@ const JobsDetails = () => {
                                 {job.JobTitle}
                               </h5>
                             </Link>
-                            <Link
-                              to={`/company-profile/${job?.companyId?._id}`}
-                              className="my-2"
-                            >
+                            <p className="my-2">
                               <p className={styles.companyNameSideBar}>
                                 {job.companyId.companyName}
                               </p>
-                            </Link>
+                            </p>
                           </div>
                         </div>
                       ))}

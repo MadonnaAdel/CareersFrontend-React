@@ -94,7 +94,7 @@ export default function SignUpStepTwo() {
   return (
     <section className={styles.register}>
       <div className={`container ${styles.loginContain}`}>
-        <div className={`row ${styles.registerForm}`}>
+        <div className={`row ${styles.registerForm} mt-5`}>
           <div className={`${styles.sectionLeft} col-7 p-4`}>
             <div className="leftTitle text-center mb-5">
               <h2>Create Account</h2>
@@ -426,7 +426,7 @@ export default function SignUpStepTwo() {
               <div className={styles.line}></div>
             </div>
             <a
-              href="http://localhost:4200/Register"
+              href="https://careers-sepia.vercel.app/Register"
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-center btn-outline-success border border-1 border-success rounded-2 p-2 m-2"

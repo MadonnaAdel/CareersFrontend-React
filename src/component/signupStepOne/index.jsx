@@ -7,7 +7,7 @@ import { useFormContext } from "../../contexts/RegisterFormContext";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from 'jwt-decode'
+import { jwtDecode } from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
 export default function SignUpStepOne() {
   const { formData, updateFormData, nextStep } = useFormContext();
@@ -51,9 +51,7 @@ export default function SignUpStepOne() {
     validationSchema: validationSchema,
     onSubmit: (val) => {
       if (formik.values.password != comfirmPassVal) return;
-      const isEmailExist = allUsers.find(
-        (user) => user.email === val.email
-      );
+      const isEmailExist = allUsers.find((user) => user.email === val.email);
       if (isEmailExist) {
         toast.error("Email already exists");
         return;
@@ -61,19 +59,11 @@ export default function SignUpStepOne() {
         updateFormData(val);
         nextStep();
       }
-
     },
   });
 
-
-
-
-
-
-
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
-      
       const decoded = jwtDecode(credentialResponse.credential);
       const User = {
         firstName: decoded.given_name,
@@ -81,11 +71,9 @@ export default function SignUpStepOne() {
         email: decoded.email,
         googleId: decoded.sub,
         phone: "",
-        password: '',
+        password: "",
       };
-      const isEmailExist = allUsers.find(
-        (user) => user.email === User.email
-      );
+      const isEmailExist = allUsers.find((user) => user.email === User.email);
       if (isEmailExist) {
         toast.error("Email already exists");
         return;
@@ -282,7 +270,7 @@ export default function SignUpStepOne() {
 
                 <div>
                   {formik.values.password !== comfirmPassVal &&
-                    comfirmPassVal ? (
+                  comfirmPassVal ? (
                     <span className="text-danger p-0 m-0">
                       Passwords do not match
                     </span>
@@ -313,17 +301,17 @@ export default function SignUpStepOne() {
               <span className="p-2 bg-white">or</span>
               <div className={styles.line}></div>
             </div>
-            <div >
+            <div>
               <GoogleLogin
                 onSuccess={(credentialResponse) => {
                   handleGoogleSuccess(credentialResponse);
                 }}
-                 redirectUri="https://careers--psi.vercel.app/auth/callback"
+                redirectUri="https://careers--psi.vercel.app/auth/callback"
               />
             </div>
 
             <a
-              href="http://localhost:4200/Register"
+              href="https://careers-sepia.vercel.app/Register"
               target="_blank"
               rel="noopener noreferrer"
               className="text-decoration-none text-center btn-outline-success border border-1 border-success rounded-2 p-2 m-2"
